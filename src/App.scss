@@ -1,0 +1,69 @@
+@use "./scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: $font-family;
+  color: $txt-color;
+  background: $body-bg;
+}
+
+.sub {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: $main-color;
+}
+
+.dotted::after {
+    content: '.';
+    font-size: 100px;
+    line-height: 0;
+    margin-left: 6px;
+    color: $main-color;
+  }
+
+
+// btns
+.read-more {
+  width: fit-content;
+  font-weight: 500;
+  color: $txt-color;
+
+  &::after {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: $main-color;
+  }
+}
+
+.btn {
+  padding: 10px 2rem;
+  border-radius: 20px;
+  border: 2px solid $main-color;
+  color: #fff;
+  background: transparent;
+  transition: color 0.3s ease,
+  background-color 0.3s ease;
+
+  &:hover {
+    color: $txt-color;
+    background: $main-color;
+  }
+}
+
+
+// container
+.container {
+  &.small {
+    @include tablet {
+      width: 70%;
+    }
+    @include phone {
+      width: 100%;
+    }
+  }
+}

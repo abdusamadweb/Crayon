@@ -1,0 +1,52 @@
+@use '../../scss' as *;
+
+.crayon-platforms {
+  padding-block: 3rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+    
+    .item {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      padding-left: 2rem;
+      padding-bottom: 1rem;
+      background: #F8F8F6;
+
+      &__img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .sub {
+        display: block;
+        font-weight: 500;
+      }
+
+      &__title {
+        font-weight: 500;
+        font-size: 20px;
+        padding-right: 10px;
+        margin-bottom: 2rem;
+      }
+
+      &__desc {
+        line-height: 1.5;
+        padding-right: 10px;
+        margin-bottom: 2rem;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}

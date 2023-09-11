@@ -1,0 +1,66 @@
+@use '../../../scss' as *;
+
+.career {
+
+  .benefit {
+    padding-block: 4rem 7rem;
+
+    &__inner {
+      gap: 7rem;
+
+      @include tablet {
+        width: 70%;
+        flex-flow: column;
+        gap: 3rem;
+        margin: 0 auto;
+      }
+    }
+
+    &__img {
+      width: 550px;
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: 42px;
+      margin-bottom: 2rem;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+
+    &__desc {
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    &__list {
+      display: flex;
+      flex-flow: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      .item {
+
+        &::before {
+          width: 6px;
+          height: 6px;
+          content: '';
+          margin-right: 12px;
+          margin-bottom: 2px;
+          border-radius: 50%;
+          background: $main-color;
+        }
+      }
+    }
+
+    .btn {
+      color: $txt-color;
+    }
+  }
+}

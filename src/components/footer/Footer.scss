@@ -1,0 +1,89 @@
+@use '../../scss' as *;
+
+.footer {
+  padding-bottom: 3rem;
+  background: $secondary-color;
+
+  .header__search {
+    color: #fff;
+
+    .icon {
+      color: #fff;
+    }
+  }
+
+  .header__nav-btn {
+    color: #fff;
+  }
+
+  &__wrapper {
+    gap: 2rem;
+    padding-block: 8rem;
+
+    .txt {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #8F9B9E;
+    }
+
+    .link {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 1rem;
+      color: #fff;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+
+    .social {
+
+      .item {
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+        color: #fff;
+
+        .icon {
+          font-size: 20px;
+          color: #fff;
+
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .nav {
+
+      &__list {
+        gap: 2rem;
+        padding-right: 3rem;
+
+        @include breakpoint-down(650px) {
+          flex-flow: row wrap;
+        }
+
+        .item {
+
+          &__link {
+            font-weight: 500;
+            color: #fff;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .address {
+    font-style: normal;
+    color: #8F9B9E;
+  }
+}

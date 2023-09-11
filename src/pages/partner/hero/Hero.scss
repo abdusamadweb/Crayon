@@ -1,0 +1,67 @@
+@use '../../../scss' as *;
+
+.partner {
+
+  .hero {
+    padding-block: 3rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__titles {
+
+      .title {
+        font-weight: 400;
+        font-size: 62px;
+        margin-block: 0 1rem;
+
+        @include tablet {
+          font-size: 46px;
+        }
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__descs {
+
+      .desc {
+        font-size: 22px;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+
+        @include tablet {
+          font-size: 18px;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+        padding: 1.2rem;
+        margin-top: 2rem;
+        border-radius: 30px;
+        color: $txt-color;
+
+        @include tablet {
+          padding: 1rem;
+          margin-top: 0;
+        }
+        @include mobile {
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../../scss' as *;
+
+.home {
+
+  .partners {
+    padding-block: 4rem;
+    background: #F2F0E9;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 4rem;
+
+      @include tablet {
+        width: 80%;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+      }
+      @include mobile {
+        width: 100%;
+        gap: 3rem;
+      }
+    }
+
+    &__titles {
+      margin-left: 8rem;
+
+      @include tablet {
+        margin-left: 0;
+      }
+
+      .txt {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: $main-color;
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.5;
+
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__lists {
+
+      .txt {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: $main-color;
+      }
+
+      .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem 3rem;
+
+        @include mobile {
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use '../../../scss' as *;
+
+.partner {
+
+  .grow {
+    padding-block: 3rem;
+
+    &__inner {
+      margin-bottom: 5rem;
+    }
+
+    &__wrapper {
+
+      .sub {
+        margin-bottom: 1rem !important;
+      }
+      .desc {
+        margin-bottom: 1rem !important;
+      }
+    }
+
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .title {
+      font-weight: 400;
+      font-size: 26px;
+      margin-bottom: 2rem;
+    }
+    .sub {
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .desc {
+      line-height: 1.7;
+      margin-bottom: 2rem;
+
+      .link {
+        font-weight: 500;
+        text-decoration: underline;
+        color: $main-color;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+    .dot {
+      &::before {
+        width: 6px;
+        height: 6px;
+        content: '';
+        margin-right: 12px;
+        margin-bottom: 2px;
+        border-radius: 50%;
+        background: $main-color;
+      }
+    }
+
+    .margin {
+      margin-bottom: 5rem;
+
+      @include tablet {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

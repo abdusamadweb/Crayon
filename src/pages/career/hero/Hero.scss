@@ -1,0 +1,108 @@
+@use '../../../scss' as *;
+
+.career {
+
+  .hero {
+    padding-block: 3rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      margin-bottom: 4rem;
+
+      @include tablet {
+        grid-template-columns: 70%;
+        justify-content: center;
+        justify-items: center;
+      }
+      @include phone {
+        grid-template-columns: 100%;
+      }
+
+      .hero__titles {
+        width: 100%;
+
+        .title {
+          font-weight: 400;
+          font-size: 62px;
+          margin-top: 0;
+          margin-bottom: 2rem;
+
+          @include tablet {
+            font-size: 42px;
+          }
+        }
+      }
+
+      .hero__descs {
+
+        .desc {
+          font-size: 22px;
+          line-height: 1.6;
+          margin-bottom: 2rem;
+
+          @include tablet {
+            font-size: 18px;
+          }
+        }
+
+        .btn {
+          color: $txt-color;
+        }
+      }
+    }
+
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      padding-bottom: 5rem;
+      background: #F8F8F6;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        grid-auto-flow: dense;
+        padding-bottom: 0;
+      }
+
+      .titles {
+        padding-top: 5rem;
+        padding-inline: 6rem;
+
+        @include mobile {
+          padding-inline: 2rem;
+        }
+
+        .title {
+          font-weight: 400;
+          font-size: 26px;
+          margin-bottom: 2rem;
+
+          @include mobile {
+            font-size: 22px;
+          }
+        }
+
+        .desc1 {
+          font-size: 28px;
+          line-height: 1.4;
+          margin-bottom: 3rem;
+
+          @include mobile {
+            font-size: 24px;
+          }
+        }
+        .desc2 {
+          line-height: 1.5;
+
+          @include tablet {
+            margin-bottom: 4rem;
+          }
+        }
+      }
+
+      .img {
+
+      }
+    }
+  }
+}
