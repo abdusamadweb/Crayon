@@ -54,17 +54,6 @@
         font-weight: 600;
       }
     }
-    .dot {
-      &::before {
-        width: 6px;
-        height: 6px;
-        content: '';
-        margin-right: 12px;
-        margin-bottom: 2px;
-        border-radius: 50%;
-        background: $main-color;
-      }
-    }
 
     .margin {
       margin-bottom: 5rem;

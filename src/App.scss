@@ -21,7 +21,18 @@ body {
     line-height: 0;
     margin-left: 6px;
     color: $main-color;
+}
+.dot {
+  &::before {
+    width: 6px;
+    height: 6px;
+    content: '';
+    margin-right: 12px;
+    margin-bottom: 2px;
+    border-radius: 50%;
+    background: $main-color;
   }
+}
 
 
 // btns

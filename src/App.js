@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 import Career from "./pages/career/Career";
 import Partner from "./pages/partner/Partner";
 import ContactUs from "./pages/contact-us/ContactUs";
+import Assets from "./pages/services/assets-migrate/Assets";
 
 
 const Wrapper = ({ children }) => {
@@ -38,6 +39,8 @@ const App = () => {
           <Routes>
 
             <Route path='/' element={<Home />} />
+
+            <Route path='/services/assess-migrate' element={<Assets />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />

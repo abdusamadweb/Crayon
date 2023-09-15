@@ -1,0 +1,61 @@
+@use '../../../scss' as *;
+
+.bubles {
+  padding-block: 4rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__titles {
+
+    .title {
+      max-width: 60%;
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.4;
+
+      @include tablet {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__list {
+    @include mobile {
+      flex-flow: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .item {
+      width: 12vw;
+      text-align: center;
+
+      @include tablet {
+        width: 15vw;
+      }
+      @include mobile {
+        width: 80%;
+      }
+
+      &__img {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @include mobile {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
