@@ -51,13 +51,13 @@ const Footer = ({openNav, setOpenNav}) => {
                     <nav className='nav'>
                         <ul className='nav__list row flex-column'>
                             <li className="item">
-                                <Link className='item__link' to='/services'>Services</Link>
+                                <Link className='item__link' to='/services/assess-migrate'>Services</Link>
                             </li>
                             <li className="item">
                                 <Link className='item__link' to='/resources'>Resources</Link>
                             </li>
                             <li className="item">
-                                <Link className='item__link' to='/career'>Career</Link>
+                                <Link className='item__link' to='/careers'>Career</Link>
                             </li>
                             <li className="item">
                                 <Link className='item__link' to='/about-us'>About us</Link>
