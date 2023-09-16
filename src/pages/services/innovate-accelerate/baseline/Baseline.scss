@@ -1,0 +1,78 @@
+@use '../../../../scss' as *;
+
+.innovate {
+
+  .baseline {
+    padding-block: 4rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .width {
+        width: 80%;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 1.5;
+        margin-bottom: 3rem;
+
+        @include tablet {
+          margin-bottom: 2rem;
+
+          &.d-block {
+            display: none;
+          }
+          &.d-none {
+            display: block;
+          }
+        }
+        @include mobile {
+          font-size: 28px;
+        }
+      }
+      .title2 {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: $main-color;
+      }
+
+      .strong {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.6;
+        padding-left: 10px;
+      }
+
+      .desc {
+        font-weight: 500;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+      }
+
+      .list {
+        .desc {
+          padding-left: 10px;
+        }
+      }
+      .list2 {
+        .desc {
+          padding-left: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

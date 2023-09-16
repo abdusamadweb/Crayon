@@ -57,6 +57,10 @@ ul, ol {
    list-style: none;
 }
 
+strong {
+   display: block;
+}
+
 i {
    position: relative;
    z-index: 1;

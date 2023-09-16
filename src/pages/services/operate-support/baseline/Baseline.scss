@@ -1,0 +1,54 @@
+@use '../../../../scss' as *;
+
+.operate {
+
+  .baseline {
+    padding-block: 4rem 8rem;
+
+    .title {
+      font-weight: 400;
+      font-size: 42px;
+      margin-bottom: 2rem;
+
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .width {
+        width: 80%;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+      .title2 {
+        font-weight: 400;
+        font-size: 26px;
+        margin-bottom: 2rem;
+
+        @include mobile {
+          font-size: 22px;
+        }
+      }
+
+      .desc {
+        line-height: 1.4;
+        margin-bottom: 1rem;
+
+        &.bold {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

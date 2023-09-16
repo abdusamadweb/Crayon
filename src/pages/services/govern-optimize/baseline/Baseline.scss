@@ -1,0 +1,51 @@
+@use '../../../../scss' as *;
+
+.govern {
+
+  .baseline {
+    padding-block: 4rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .width {
+        width: 80%;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+      }
+      .title2 {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 2rem;
+      }
+
+      .strong {
+        display: block;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 2rem;
+      }
+
+      .desc {
+        font-weight: 500;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

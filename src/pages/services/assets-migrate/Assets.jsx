@@ -1,14 +1,14 @@
 import React from 'react'
-import Titles from "../titles-component/Titles";
+import Titles from "../../../components/titles/Titles";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import {useHref} from "react-router-dom";
-import Bubles from "../bubles-component/Bubles";
+import Bubles from "../../../components/bubles/Bubles";
 import img1 from '../../../assets/images/services/optimize-software.png'
 import img2 from '../../../assets/images/services/controll-business.png'
 import img3 from '../../../assets/images/services/visibility-over.png'
 import img from '../../../assets/images/services/assets-img.jpg'
 import Baseline from "./baseline/Baseline";
-import Report from "../report-component/Report";
+import Report from "../component-report/Report";
 import ContactForm from "../../../components/contact-form/ContactForm";
 
 const Assets = () => {

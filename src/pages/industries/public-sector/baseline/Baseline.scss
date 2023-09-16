@@ -1,0 +1,51 @@
+@use '../../../../scss/index' as *;
+
+.public {
+
+  .baseline {
+    padding-block: 4rem 8rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .width {
+        width: 75%;
+
+        @include tablet {
+          width: 100%;
+        }
+      }
+
+      .title {
+        min-height: 190px;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+
+        @include mobile {
+          min-height: unset;
+          font-size: 28px;
+        }
+      }
+
+      .desc {
+        font-weight: 500;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .list {
+        .desc {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

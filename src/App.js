@@ -12,6 +12,12 @@ import Career from "./pages/career/Career";
 import Partner from "./pages/partner/Partner";
 import ContactUs from "./pages/contact-us/ContactUs";
 import Assets from "./pages/services/assets-migrate/Assets";
+import Govern from "./pages/services/govern-optimize/Govern";
+import Innovate from "./pages/services/innovate-accelerate/Innovate";
+import Operate from "./pages/services/operate-support/Operate";
+import Healthcare from "./pages/industries/healthcare/Healthcare";
+import Public from "./pages/industries/public-sector/Public";
+import Page404 from "./components/404/Page404";
 
 
 const Wrapper = ({ children }) => {
@@ -41,10 +47,18 @@ const App = () => {
             <Route path='/' element={<Home />} />
 
             <Route path='/services/assess-migrate' element={<Assets />} />
+            <Route path='/services/govern-optimize' element={<Govern />} />
+            <Route path='/services/innovate-accelerate' element={<Innovate />} />
+            <Route path='/services/operate-support' element={<Operate />} />
+
+            <Route path='/industries/healthcare' element={<Healthcare />} />
+            <Route path='/industries/public-sector' element={<Public />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />
             <Route path='/careers' element={<Career />} />
+
+            <Route path='/*' element={<Page404 />} />
 
           </Routes>
 
