@@ -1,0 +1,31 @@
+@use '../../../../scss' as *;
+
+.google {
+
+  .offer {
+    padding-block: 4rem;
+
+    &__title {
+      font-weight: 400;
+      font-size: 42px;
+      margin-bottom: 3rem;
+
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-block: 2rem;
+      border-block: 1px solid rgba(4,36,45,0.3);
+
+      .item {
+        line-height: 1.6;
+        opacity: 0.99;
+      }
+    }
+  }
+}

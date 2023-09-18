@@ -76,7 +76,7 @@ const Footer = ({openNav, setOpenNav}) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

@@ -4,7 +4,7 @@ import img1 from "../../../assets/images/services/monitor.png";
 import img2 from "../../../assets/images/services/manage.png";
 import img3 from "../../../assets/images/services/operate.png";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
-import Titles from "../../../components/titles/Titles";
+import Titles from "../../../components/service-titles/Titles";
 import Bubles from "../../../components/bubles/Bubles";
 import ContactForm from "../../../components/contact-form/ContactForm";
 import Baseline from "./baseline/Baseline";

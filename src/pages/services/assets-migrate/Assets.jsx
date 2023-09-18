@@ -1,5 +1,5 @@
 import React from 'react'
-import Titles from "../../../components/titles/Titles";
+import Titles from "../../../components/service-titles/Titles";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import {useHref} from "react-router-dom";
 import Bubles from "../../../components/bubles/Bubles";

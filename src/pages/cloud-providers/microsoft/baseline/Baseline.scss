@@ -1,0 +1,70 @@
+@use '../../../../scss' as *;
+
+.cloud-providers {
+
+  .microsoft__img {
+    display: block;
+    padding-block: 2rem 4rem;
+  }
+  .microsoft__list {
+    column-gap: 3rem;
+    row-gap: 1rem;
+    padding-block: 4rem;
+
+    .item__img {
+      width: 250px;
+    }
+  }
+
+  .baseline {
+    padding-block: 4rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 1rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+
+      .padding {
+        padding-left: 6rem;
+
+        @include tablet {
+          padding-left: 0;
+        }
+        @include phone {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .title {
+      min-height: 96px;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    .desc {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+
+      &::before {
+        top: 0;
+      }
+    }
+
+    .list {
+      .desc {
+        padding-left: 2rem;
+      }
+    }
+  }
+}

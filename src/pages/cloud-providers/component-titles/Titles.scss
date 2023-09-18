@@ -1,0 +1,68 @@
+@use '../../../scss' as *;
+
+.cloud-providers {
+
+  .titles {
+    padding-block: 4rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 1rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+
+      .padding {
+        padding-top: 3rem;
+        padding-left: 6rem;
+
+        @include tablet {
+          padding-left: 0;
+        }
+        @include phone {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .title {
+      font-weight: 400;
+      font-size: 80px;
+      margin-block: 0;
+
+      @include tablet {
+        font-size: 62px;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    .desc {
+      font-size: 22px;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+
+      @include phone {
+        font-size: 16px;
+      }
+    }
+
+    .strong {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 1rem;
+      border-radius: 30px;
+      color: $txt-color;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
-import Titles from "../../../components/titles/Titles";
+import Titles from "../../../components/service-titles/Titles";
 import {useHref} from "react-router-dom";
 import ContactForm from "../../../components/contact-form/ContactForm";
 import Audit from "./audit/Audit";

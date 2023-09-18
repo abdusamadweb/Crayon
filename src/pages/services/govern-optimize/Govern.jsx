@@ -1,6 +1,6 @@
 import React from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
-import Titles from "../../../components/titles/Titles";
+import Titles from "../../../components/service-titles/Titles";
 import Bubles from "../../../components/bubles/Bubles";
 import {useHref} from "react-router-dom";
 import img1 from "../../../assets/images/services/level1.png";

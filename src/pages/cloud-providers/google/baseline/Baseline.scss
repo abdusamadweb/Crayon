@@ -1,0 +1,33 @@
+@use '../../../../scss' as *;
+
+.google {
+
+  .baseline {
+
+    .title {
+      margin-bottom: 3rem;
+    }
+    .title2 {
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .desc {
+      margin-bottom: 2rem;
+    }
+
+    .row {
+      row-gap: 2rem;
+      column-gap: 3rem;
+    }
+
+    .list {
+      margin-bottom: 1rem;
+
+      .desc {
+        padding-left: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

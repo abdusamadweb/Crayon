@@ -18,6 +18,9 @@ import Operate from "./pages/services/operate-support/Operate";
 import Healthcare from "./pages/industries/healthcare/Healthcare";
 import Public from "./pages/industries/public-sector/Public";
 import Page404 from "./components/404/Page404";
+import Microsoft from "./pages/cloud-providers/microsoft/Microsoft";
+import Aws from "./pages/cloud-providers/aws/Aws";
+import Google from "./pages/cloud-providers/google/Google";
 
 
 const Wrapper = ({ children }) => {
@@ -53,6 +56,10 @@ const App = () => {
 
             <Route path='/industries/healthcare' element={<Healthcare />} />
             <Route path='/industries/public-sector' element={<Public />} />
+
+            <Route path='/cloud-providers/microsoft' element={<Microsoft />} />
+            <Route path='/cloud-providers/aws' element={<Aws />} />
+            <Route path='/cloud-providers/google-cloud' element={<Google />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />
