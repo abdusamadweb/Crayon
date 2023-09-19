@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
-import Titles from "../component-titles/Titles";
+import Titles from "../../../components/cloud-titles/Titles";
 import googleImg from "../../../assets/images/google-img.jpg";
 import googleImg2 from "../../../assets/images/google-img2.jpg";
 import ContactForm from "../../../components/contact-form/ContactForm";
@@ -26,7 +26,9 @@ const Google = () => {
             <Baseline />
             <OfferReview />
             <ContactForm />
-            <img className='microsoft__img container' src={googleImg2} alt="img"/>
+            <div className="container">
+                <img className='microsoft__img2' src={googleImg2} alt="img"/>
+            </div>
         </div>
     )
 }

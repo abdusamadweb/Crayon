@@ -1,6 +1,6 @@
-@use '../../../scss' as *;
+@use 'src/scss/index' as *;
 
-.cloud-providers {
+.cloud-providers, .software-partners {
 
   .titles {
     padding-block: 4rem;

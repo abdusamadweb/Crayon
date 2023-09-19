@@ -21,6 +21,12 @@ import Page404 from "./components/404/Page404";
 import Microsoft from "./pages/cloud-providers/microsoft/Microsoft";
 import Aws from "./pages/cloud-providers/aws/Aws";
 import Google from "./pages/cloud-providers/google/Google";
+import Adobe from "./pages/software-partners/adobe/Adobe";
+import Citrix from "./pages/software-partners/citrix/Citrix";
+import Flexera from "./pages/software-partners/flexera/Flexera";
+import Ibm from "./pages/software-partners/ibm/Ibm";
+import Veeam from "./pages/software-partners/veeam/Veeam";
+import Vmware from "./pages/software-partners/vmware/Vmware";
 
 
 const Wrapper = ({ children }) => {
@@ -60,6 +66,13 @@ const App = () => {
             <Route path='/cloud-providers/microsoft' element={<Microsoft />} />
             <Route path='/cloud-providers/aws' element={<Aws />} />
             <Route path='/cloud-providers/google-cloud' element={<Google />} />
+
+            <Route path='/software-partners/adobe' element={<Adobe />} />
+            <Route path='/software-partners/citrix' element={<Citrix />} />
+            <Route path='/software-partners/flexera' element={<Flexera />} />
+            <Route path='/software-partners/ibm' element={<Ibm />} />
+            <Route path='/software-partners/veeam' element={<Veeam />} />
+            <Route path='/software-partners/vmware' element={<Vmware />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />

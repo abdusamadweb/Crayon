@@ -1,6 +1,6 @@
 import React from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb"
-import Titles from "../component-titles/Titles"
+import Titles from "../../../components/cloud-titles/Titles"
 import {useHref} from "react-router-dom"
 import CrayonPlatforms from "../../../components/crayon-platforms/CrayonPlatforms"
 import ContactForm from "../../../components/contact-form/ContactForm"

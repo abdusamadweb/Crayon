@@ -4,7 +4,7 @@ import React from 'react'
 const OfferReview = () => {
     return (
         <div className='offer'>
-            <div className="container">
+            <div className="container small">
                 <h3 className="offer__title">Offer Review</h3>
                 <ul className="offer__list">
                     <li className="item">

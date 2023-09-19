@@ -4,7 +4,7 @@ import React from 'react'
 const Baseline = () => {
     return (
         <div className='baseline'>
-            <div className="container">
+            <div className="container small">
                 <div className="baseline__inner">
                     <div>
                         <h3 className="title">

@@ -1,10 +1,15 @@
 @use '../../../../scss' as *;
 
-.cloud-providers {
+.cloud-providers, .software-partners {
 
   .microsoft__img {
     display: block;
-    padding-block: 2rem 4rem;
+    padding-block: 2rem;
+  }
+  .microsoft__img2 {
+    width: 250px;
+    display: block;
+    padding-block: 2rem;
   }
   .microsoft__list {
     column-gap: 3rem;
@@ -51,7 +56,16 @@
         font-size: 28px;
       }
     }
+    .title2 {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 2rem;
+    }
 
+    .strong {
+      font-weight: 600;
+      line-height: 1.5;
+    }
     .desc {
       line-height: 1.5;
       margin-bottom: 1rem;
@@ -64,6 +78,47 @@
     .list {
       .desc {
         padding-left: 2rem;
+      }
+    }
+    .list2 {
+      .desc {
+        padding-left: 0;
+      }
+    }
+
+    .sam {
+      margin-top: 3rem;
+
+      &__title {
+        position: relative;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 2rem;
+
+        &::before, &::after {
+          width: 20px;
+          height: 20px;
+          content: '';
+          margin-right: 2rem;
+          border-radius: 50%;
+          background: $main-color;
+        }
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 22px;
+        }
+
+        @include phone {
+          font-size: 18px;
+        }
+
+        span {
+          font-weight: 600;
+        }
+      }
+      &__img {
+        width: 100%;
       }
     }
   }
