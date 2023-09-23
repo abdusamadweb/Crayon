@@ -23,7 +23,7 @@ const Baseline = () => {
                             Crayon believe that having the optimized IBM agreement is achieved through paying for licenses that you consume (no more and no less), and further having the optimized commercial structure for this license portfolio.
                         </p>
                         <div className='sam'>
-                            <h5 className='sam__title'>
+                            <h5 className='sam__title double-dot'>
                                 <span>IBM</span> SAM + <span>IBM</span> LICENCE KNOWLEDGE = <span>OPTIMIZED IBM</span> AGREEMENT
                             </h5>
                             <img className='sam__img' src={img} alt="img"/>

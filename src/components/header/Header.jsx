@@ -1,6 +1,6 @@
 import './Header.scss'
-import React, {useState} from 'react';
-import {Link, useLocation} from "react-router-dom";
+import React from 'react';
+import {Link, useHref} from "react-router-dom";
 import logo from '../../assets/images/logo.png'
 import logoDark from '../../assets/images/logo-black.png'
 import NavBar from "./NavBar";
@@ -8,16 +8,16 @@ import NavBar from "./NavBar";
 const Header = ({ openNav, setOpenNav }) => {
 
 
-    const location = useLocation()
+    const href = useHref()
 
 
     return (
-        <div className={`header ${openNav ? 'fixed' : ''} ${location.pathname === '/' ? 'absolute' : ''}`}>
+        <div className={`header ${openNav ? 'fixed' : ''} ${(href === '/' || href.includes('diversity')) ? 'absolute' : ''}`}>
             <div className="container">
                 <div className={`header__inner row between align-center ${openNav ? 'open-nav' : ''}`}>
                     <Link className='header__logo' to='/'>
                         {
-                            location.pathname === '/' ?
+                            (href === '/' || href.includes('diversity')) ?
                                 <img className='img' src={logo} alt="logo"/>
                                 : <img className='img' src={logoDark} alt="logo"/>
                         }

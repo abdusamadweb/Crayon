@@ -16,7 +16,7 @@ const NavBar = ({ openNav, setOpenNav }) => {
                     {
                         navList.map((i, index) => (
                             <li
-                                className='item row align-center'
+                                className='item d-flex align-center'
                                 key={index}
                                 onMouseEnter={() => {
                                     setActiveNav(index)

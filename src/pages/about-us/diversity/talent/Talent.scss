@@ -1,0 +1,96 @@
+@use '../../../../scss' as *;
+
+.diversity {
+
+  .talent {
+    text-align: center;
+    padding-block: 6rem;
+
+    &__inner {
+      margin-bottom: 3rem;
+
+      .title {
+        font-weight: 400;
+        font-size: 42px;
+        margin-bottom: 2rem;
+
+        @include tablet {
+          font-size: 34px;
+        }
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__wrapper {
+
+      .title {
+        font-weight: 400;
+        font-size: 62px;
+        margin-bottom: 2rem;
+
+        @include tablet {
+          font-size: 52px;
+        }
+        @include mobile {
+          font-size: 28px;
+        }
+      }
+
+      .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        @include tablet {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .item {
+          padding-inline: 2rem;
+
+          @include tablet {
+            border: none !important;
+          }
+
+          &:nth-child(2) {
+            border-inline: 1px solid #ccc;
+          }
+          &:nth-child(3) {
+            border-right: 1px solid #ccc;
+          }
+
+          &__imgs {
+            width: 155px;
+            height: 155px;
+            padding: 10px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: #f8f8f6;
+
+            .img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          }
+
+          &__desc {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .desc {
+      text-align: start;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+
+      b {
+        font-weight: 600;
+      }
+    }
+  }
+}

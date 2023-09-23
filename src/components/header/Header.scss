@@ -134,6 +134,7 @@
 
       .item {
         font-size: 32px;
+        padding-right: 6px;
         cursor: pointer;
 
         @include breakpoint-down(750px) {

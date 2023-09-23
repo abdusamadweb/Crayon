@@ -27,6 +27,9 @@ import Flexera from "./pages/software-partners/flexera/Flexera";
 import Ibm from "./pages/software-partners/ibm/Ibm";
 import Veeam from "./pages/software-partners/veeam/Veeam";
 import Vmware from "./pages/software-partners/vmware/Vmware";
+import Diversity from "./pages/about-us/diversity/Diversity";
+import Terms from "./pages/about-us/terms-conditions/Terms";
+import GlobalPrivacy from "./pages/about-us/global-privacy/GlobalPrivacy";
 
 
 const Wrapper = ({ children }) => {
@@ -73,6 +76,10 @@ const App = () => {
             <Route path='/software-partners/ibm' element={<Ibm />} />
             <Route path='/software-partners/veeam' element={<Veeam />} />
             <Route path='/software-partners/vmware' element={<Vmware />} />
+
+            <Route path='/about-us/diversity-equity-inclusion' element={<Diversity />} />
+            <Route path='/about-us/terms-conditions' element={<Terms />} />
+            <Route path='/about-us/global-privacy-notice' element={<GlobalPrivacy />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />

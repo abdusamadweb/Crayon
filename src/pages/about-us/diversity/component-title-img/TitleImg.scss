@@ -1,0 +1,35 @@
+@use '../../../../scss' as *;
+
+.diversity {
+
+  .titleImg, .human {
+    padding-block: 6rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+
+      .padd {
+        padding-right: 7rem;
+
+        @include tablet {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .desc {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .vd {
+      width: 100%;
+    }
+  }
+}

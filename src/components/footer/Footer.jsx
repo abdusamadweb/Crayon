@@ -68,8 +68,11 @@ const Footer = ({openNav, setOpenNav}) => {
                         </ul>
                     </nav>
                 </div>
-                <div className="row between">
-                    <div/>
+                <div className="row between" style={{alignItems: 'flex-end'}}>
+                    <div className='privacy'>
+                        <Link className='link' to='/about-us/privacy-policy'>Privacy Policy</Link>
+                        <Link className='link' to='/about-us/global-privacy-notice'>Global Privacy Notice</Link>
+                    </div>
                     <address className='address'>
                         12221 Merit Dr. Suite #1400, Dallas, TX 75251, United States
                     </address>

@@ -1,0 +1,126 @@
+@use '../../../scss' as *;
+
+.terms {
+  position: relative;
+
+  .small {
+    width: 70%;
+    padding-block: 2rem 4rem;
+
+    @include phone {
+      width: 100%;
+    }
+  }
+
+  .wrap {
+    margin-bottom: 2.5rem;
+
+    .sub {
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .date {
+    font-size: 18px;
+    margin-bottom: 2.5rem;
+    color: #8f9b9e;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 62px;
+    margin-bottom: 3rem;
+
+    @include tablet {
+      font-size: 52px;
+    }
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  .title2 {
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 2.2rem;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .title3 {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  .desc {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+
+    b {
+      font-weight: 600;
+    }
+
+    .list {
+      padding-top: 2rem;
+    }
+  }
+
+  .list {
+    padding-left: 1rem;
+  }
+
+  .social {
+
+    &.absolute {
+      position: absolute;
+      top: 300px;
+      left: 2rem;
+
+      @include breakpoint-down(888px) {
+        display: none;
+      }
+
+      .sub {
+        border: none;
+      }
+    }
+
+    .sub {
+      display: block;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $main-color;
+    }
+
+    .link {
+      width: 30px;
+      height: 30px;
+      margin-right: 2px;
+      color: #fff;
+
+      .icon {
+        font-size: 20px;
+        color: $txt-color;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+.global {
+
+  .social.absolute {
+    top: 240px;
+  }
+}

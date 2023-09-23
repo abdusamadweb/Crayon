@@ -1,0 +1,58 @@
+@use '../../../../scss' as *;
+
+.diversity {
+
+  .learn-more {
+    font-weight: 400;
+    font-size: 26px;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .human {
+    padding-block: 6rem 5rem;
+    background: #F2F0E9;
+
+    .title {
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+
+      @include mobile {
+        font-size: 24px;
+      }
+      
+      &::before {
+        display: block;
+        margin-bottom: 5px;
+      }
+      &::after {
+        left: 25px;
+      }
+    }
+    .txt {
+      display: block;
+      text-align: end;
+      font-size: 15px;
+      color: #8f9b9e;
+
+      span {
+        font-weight: 500;
+        font-size: 14px;
+        color: $main-color;
+      }
+    }
+
+    .img {
+      max-height: 650px;
+
+      @include tablet {
+        max-height: 600px;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ import platform1 from '../../assets/images/crayon-platforms/empower.png'
 import platform2 from '../../assets/images/crayon-platforms/cloud.jpg'
 import platform3 from '../../assets/images/crayon-platforms/COR.jpg'
 
-const CrayonPlatforms = () => {
+const CrayonPlatforms = ({ title }) => {
 
     const crayonPlatforms = [
         {
@@ -35,6 +35,7 @@ const CrayonPlatforms = () => {
     return (
         <div className='crayon-platforms'>
             <div className="container small">
+                <div className="learn-more">Learn more:</div>
                 <ul className='crayon-platforms__list'>
                     {
                         crayonPlatforms?.map(i => (

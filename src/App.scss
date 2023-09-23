@@ -33,6 +33,34 @@ body {
     background: $main-color;
   }
 }
+.double-dot {
+  position: relative;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 2rem;
+
+  @include phone {
+    font-size: 18px;
+  }
+
+  &::before, &::after {
+    width: 20px;
+    height: 20px;
+    content: '';
+    margin-right: 2rem;
+    border-radius: 50%;
+    background: $main-color;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 22px;
+  }
+
+  span {
+    font-weight: 600;
+  }
+}
 
 .numeric li {
   position: relative;

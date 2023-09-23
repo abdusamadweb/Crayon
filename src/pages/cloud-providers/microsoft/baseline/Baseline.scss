@@ -89,34 +89,6 @@
     .sam {
       margin-top: 3rem;
 
-      &__title {
-        position: relative;
-        font-weight: 400;
-        font-size: 20px;
-        margin-bottom: 2rem;
-
-        &::before, &::after {
-          width: 20px;
-          height: 20px;
-          content: '';
-          margin-right: 2rem;
-          border-radius: 50%;
-          background: $main-color;
-        }
-        &::after {
-          position: absolute;
-          top: 0;
-          left: 22px;
-        }
-
-        @include phone {
-          font-size: 18px;
-        }
-
-        span {
-          font-weight: 600;
-        }
-      }
       &__img {
         width: 100%;
       }
