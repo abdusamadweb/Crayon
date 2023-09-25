@@ -30,6 +30,8 @@ import Vmware from "./pages/software-partners/vmware/Vmware";
 import Diversity from "./pages/about-us/diversity/Diversity";
 import Terms from "./pages/about-us/terms-conditions/Terms";
 import GlobalPrivacy from "./pages/about-us/global-privacy/GlobalPrivacy";
+import Blogs from "./pages/resources/blogs/Blogs";
+import CaseStudies from "./pages/resources/case-studies/CaseStudies";
 
 
 const Wrapper = ({ children }) => {
@@ -80,6 +82,9 @@ const App = () => {
             <Route path='/about-us/diversity-equity-inclusion' element={<Diversity />} />
             <Route path='/about-us/terms-conditions' element={<Terms />} />
             <Route path='/about-us/global-privacy-notice' element={<GlobalPrivacy />} />
+
+            <Route path='/resources/blogs' element={<Blogs />} />
+            <Route path='/resources/case-studies' element={<CaseStudies />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />

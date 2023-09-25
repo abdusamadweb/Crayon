@@ -1,0 +1,138 @@
+@use '../../../scss' as *;
+
+.resources {
+
+  .blogs {
+
+    &__img {
+      min-height: 400px;
+      display: block;
+      margin: 0 auto -3px;
+      object-fit: cover;
+
+      @include tablet {
+        min-height: 300px;
+      }
+      @include phone {
+        min-height: 200px;
+      }
+    }
+
+    &__titles {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 7rem;
+      padding: 6rem 7rem 5rem;
+      margin-bottom: 2rem;
+      background: #F8F8F6;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      @include breakpoint-down(900px) {
+        padding: 3rem;
+        gap: 2rem;
+      }
+      @include phone {
+        padding-inline: 2rem;
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 42px;
+
+        @include mobile {
+          font-size: 34px;
+        }
+        @include phone {
+          font-size: 24px;
+        }
+      }
+
+      .desc {
+        font-size: 22px;
+        line-height: 1.5;
+
+        @include phone {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__news {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        padding: 2.5rem 2rem;
+        background: #F8F8F6;
+
+        &__date {
+          margin-bottom: 10px;
+        }
+
+        &__title {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 1.4;
+          margin-bottom: 1rem;
+
+          @include phone {
+            font-size: 18px;
+          }
+        }
+        &__desc {
+          line-height: 1.4;
+        }
+      }
+    }
+
+    &__clouds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .item {
+        &__img {
+          display: block;
+          margin: 0 auto -3px;
+        }
+        
+        &__inner {
+          padding: 3rem 2rem 2rem;
+          background: #F8F8F6;
+
+          .date {
+            margin-bottom: 10px;
+          }
+
+          .title {
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+
+            @include phone {
+              font-size: 18px;
+            }
+          }
+          .desc {
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use '../../../scss' as *;
+
+.resources {
+
+  .navs {
+    padding-block: 3rem;
+
+    &__title {
+      font-weight: 400;
+      font-size: 80px;
+      margin-top: 0;
+      margin-bottom: 3rem;
+
+      @include tablet {
+        font-size: 62px;
+      }
+      @include mobile {
+        font-size: 42px;
+      }
+      @include phone {
+        font-size: 28px;
+      }
+    }
+
+    .sub {
+      display: block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $txt-color;
+    }
+
+    &__list {
+      column-gap: 4rem;
+      row-gap: 2rem;
+
+      .item {
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #8f9b9e;
+        cursor: pointer;
+
+        &.active {
+          color: $txt-color;
+        }
+      }
+    }
+  }
+}

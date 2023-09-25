@@ -35,7 +35,10 @@ const CrayonPlatforms = ({ title }) => {
     return (
         <div className='crayon-platforms'>
             <div className="container small">
-                <div className="learn-more">Learn more:</div>
+                {
+                    title &&
+                    <div className="learn-more">Learn more:</div>
+                }
                 <ul className='crayon-platforms__list'>
                     {
                         crayonPlatforms?.map(i => (
