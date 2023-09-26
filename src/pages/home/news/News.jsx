@@ -22,7 +22,7 @@ const News = () => {
                             <p className="desc">
                                 Boost collaboration with Teams Phone. Experience cloud telephony advantages, enhanced security, and expert integration with Anywhere365 and Crayon.
                             </p>
-                            <Link className='link read-more' to='/blogs'>Read more</Link>
+                            <Link className='link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                         <div>
                             <h4 className="title">
@@ -31,7 +31,7 @@ const News = () => {
                             <p className="desc">
                                 Setting up a Cloud Center of Excellence is an ideal way to position your organization for success when you embrace the complexity of multicloud solutions
                             </p>
-                            <Link className='link read-more' to='/blogs'>Read more</Link>
+                            <Link className='link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const News = () => {
                             <p className='item__desc'>
                                 Crayon identified 21% of monthly savings for Banyan Technology after performing a cloud economics to rightsize their azure environment and lower their spending.
                             </p>
-                            <Link className='item__link read-more' to='/blogs/'>Read more</Link>
+                            <Link className='item__link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                     </li>
                     <li className="item">
@@ -57,7 +57,7 @@ const News = () => {
                             <p className='item__desc'>
                                 Crayon identified 21% of monthly savings for Banyan Technology after performing a cloud economics to rightsize their azure environment and lower their spending.
                             </p>
-                            <Link className='item__link read-more' to='/blogs/'>Read more</Link>
+                            <Link className='item__link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                     </li>
                     <li className="item">
@@ -69,7 +69,7 @@ const News = () => {
                             <p className='item__desc'>
                                 Crayon identified 21% of monthly savings for Banyan Technology after performing a cloud economics to rightsize their azure environment and lower their spending.
                             </p>
-                            <Link className='item__link read-more' to='/blogs/'>Read more</Link>
+                            <Link className='item__link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                     </li>
                     <li className="item">
@@ -81,7 +81,7 @@ const News = () => {
                             <p className='item__desc'>
                                 Crayon identified 21% of monthly savings for Banyan Technology after performing a cloud economics to rightsize their azure environment and lower their spending.
                             </p>
-                            <Link className='item__link read-more' to='/blogs/'>Read more</Link>
+                            <Link className='item__link read-more' to='/resources/blogs'>Read more</Link>
                         </div>
                     </li>
                 </ul>

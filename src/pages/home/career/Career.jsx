@@ -15,7 +15,7 @@ const Career = () => {
                         <p className='desc'>
                             Join our global team that tackles tomorrow’s technology. Crayon is a catalyst and creator of progress and possibilities because we infuse people’s know-how. Ideas and innovation rarely occur in isolation. In the Crayon community, we discover, design, and develop the journey to digital transformation together.
                         </p>
-                        <Link className='link' to='/career'>Find Out More</Link>
+                        <Link className='link' to='/careers'>Find Out More</Link>
                     </div>
                 </div>
             </div>

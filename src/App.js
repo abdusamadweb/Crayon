@@ -32,6 +32,7 @@ import Terms from "./pages/about-us/terms-conditions/Terms";
 import GlobalPrivacy from "./pages/about-us/global-privacy/GlobalPrivacy";
 import Blogs from "./pages/resources/blogs/Blogs";
 import CaseStudies from "./pages/resources/case-studies/CaseStudies";
+import Subscribe from "./pages/resources/subscribe/Subscribe";
 
 
 const Wrapper = ({ children }) => {
@@ -79,12 +80,16 @@ const App = () => {
             <Route path='/software-partners/veeam' element={<Veeam />} />
             <Route path='/software-partners/vmware' element={<Vmware />} />
 
+            <Route path='/about-us/careers' element={<Career />} />
             <Route path='/about-us/diversity-equity-inclusion' element={<Diversity />} />
             <Route path='/about-us/terms-conditions' element={<Terms />} />
             <Route path='/about-us/global-privacy-notice' element={<GlobalPrivacy />} />
 
             <Route path='/resources/blogs' element={<Blogs />} />
             <Route path='/resources/case-studies' element={<CaseStudies />} />
+            <Route path='/resources/news' element={<CaseStudies />} />
+            <Route path='/resources/newsletters' element={<CaseStudies />} />
+            <Route path='/resources/subscribe' element={<Subscribe />} />
 
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/partner' element={<Partner />} />

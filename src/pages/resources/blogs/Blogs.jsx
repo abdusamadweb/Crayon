@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import Navs from "../component-navs/Navs";
-import {blogsList} from "../../../assets/scripts/blogsList";
+import {blogsList, blogsNav} from "../../../assets/scripts/blogsList";
 import CrayonPlatforms from "../../../components/crayon-platforms/CrayonPlatforms";
 
 const Blogs = () => {
@@ -18,7 +18,12 @@ const Blogs = () => {
     return (
         <div className='blogs resources'>
             <BreadCrumb href={href} />
-            <Navs activeNav={activeNav} setActiveNav={setActiveNav} />
+            <Navs
+                activeNav={activeNav}
+                setActiveNav={setActiveNav}
+                title='Blogs'
+                nav={blogsNav}
+            />
             <div className="container small">
                 <div>
                     <img className='blogs__img' src={blogs.img} alt="img"/>

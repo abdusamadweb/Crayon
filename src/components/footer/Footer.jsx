@@ -54,13 +54,13 @@ const Footer = ({openNav, setOpenNav}) => {
                                 <Link className='item__link' to='/services/assess-migrate'>Services</Link>
                             </li>
                             <li className="item">
-                                <Link className='item__link' to='/resources'>Resources</Link>
+                                <Link className='item__link' to='/resources/blogs'>Resources</Link>
                             </li>
                             <li className="item">
                                 <Link className='item__link' to='/careers'>Career</Link>
                             </li>
                             <li className="item">
-                                <Link className='item__link' to='/about-us'>About us</Link>
+                                <Link className='item__link' to='/about-us/diversity-equity-inclusion'>About us</Link>
                             </li>
                             <li className="item">
                                 <Link className='item__link' to='/contact-us'>Contact Us</Link>

@@ -8,8 +8,9 @@ import img2 from '../../../assets/images/services/controll-business.png'
 import img3 from '../../../assets/images/services/visibility-over.png'
 import img from '../../../assets/images/services/assets-img.jpg'
 import Baseline from "./baseline/Baseline";
-import Report from "../component-report/Report";
+import Subscribe from "../component-report/Report";
 import ContactForm from "../../../components/contact-form/ContactForm";
+import Report from "../component-report/Report";
 
 const Assets = () => {
 
@@ -47,7 +48,7 @@ const Assets = () => {
             <Baseline />
             <Report
                 sub='CRAYON REPORTS'
-                title='Report: The State of IT Cost Optimization in 2023'
+                title='Subscribe: The State of IT Cost Optimization in 2023'
                 desc='New global research into how businesses manage their budgets, where they struggle and how they are cutting costs.'
                 img={img}
             />

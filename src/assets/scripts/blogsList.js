@@ -24,7 +24,7 @@ export const blogsNav = [
     'software',
     'cloud',
     'trans',
-    'it',
+    'IT',
 ]
 
 export const blogsList = {
@@ -263,7 +263,7 @@ export const blogsList = {
             },
         ]
     },
-    it: {
+    IT: {
         img: itImg,
         title: 'Build a multi-cloud Center of Excellence',
         desc: 'Setting up a Cloud Center of Excellence is an ideal way to position your organization for success when you embrace the complexity of multicloud solutions',

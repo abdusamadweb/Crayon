@@ -13,7 +13,7 @@ export const caseNav = [
     'cloud',
     'software',
     'security',
-    'ai',
+    'AI',
 ]
 
 export const caseList = {
@@ -193,7 +193,7 @@ export const caseList = {
         blogs: [
         ]
     },
-    ai: {
+    AI: {
         img: transImg,
         title: 'Build a multi-cloud Center of Excellence',
         desc: 'Setting up a Cloud Center of Excellence is an ideal way to position your organization for success when you embrace the complexity of multicloud solutions',

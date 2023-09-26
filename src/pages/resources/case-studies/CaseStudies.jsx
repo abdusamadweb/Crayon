@@ -4,7 +4,7 @@ import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import Navs from "../component-navs/Navs";
 import CrayonPlatforms from "../../../components/crayon-platforms/CrayonPlatforms";
-import {caseList} from "../../../assets/scripts/caseList";
+import {caseList, caseNav} from "../../../assets/scripts/caseList";
 
 const Blogs = () => {
 
@@ -18,20 +18,26 @@ const Blogs = () => {
     return (
         <div className='blogs resources'>
             <BreadCrumb href={href} />
-            <Navs activeNav={activeNav} setActiveNav={setActiveNav} />
+            <Navs
+                activeNav={activeNav}
+                setActiveNav={setActiveNav}
+                title='Case Studies'
+                nav={caseNav}
+            />
             <div className="container small">
                 <div>
-                    <img className='blogs__img' src={blogs.img} alt="img"/>
+                    <img className='blogs__img' src={blogs?.img} alt="img"/>
                     <div className='blogs__titles'>
-                        <h4 className="title">{ blogs.title }</h4>
+                        <h4 className="title">{ blogs?.title }</h4>
                         <div>
-                            <p className="desc">{ blogs.desc }</p>
+                            <p className="desc">{ blogs?.desc }</p>
                             {/*<Link className='read-more' to='/'>Read more</Link>*/}
                         </div>
                     </div>
                 </div>
                 <ul className="blogs__news">
                     {
+                        // blogs.news.length &&
                         blogs.news.map((i, index) => (
                             <li className="item" key={index}>
                                 <span className='item__date'>{ i.date }</span>
@@ -44,6 +50,7 @@ const Blogs = () => {
                 </ul>
                 <ul className="blogs__clouds">
                     {
+                        // blogs.blogs.length &&
                         blogs.blogs.map((i, index) => (
                             <li className='item' key={index}>
                                 <img className='item__img' src={i.img} alt="img"/>

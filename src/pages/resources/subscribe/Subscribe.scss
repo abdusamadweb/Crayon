@@ -1,0 +1,136 @@
+@use '../../../scss' as *;
+
+.resources {
+
+  .subs {
+    padding-block: 4rem;
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 45% 40%;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 3rem;
+      padding-block: 3rem 4rem;
+
+      @include tablet {
+        grid-template-columns: 1fr;
+        padding-block: 2rem;
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 1.2;
+        margin: 0;
+
+        @include tablet {
+          font-size: 62px;
+        }
+        @include mobile {
+          font-size: 42px;
+        }
+        @include phone {
+          font-size: 28px;
+        }
+      }
+
+      .title2 {
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 1.2;
+        margin: 0;
+
+        @include mobile {
+          font-size: 32px;
+        }
+        @include phone {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__wrapper {
+      align-items: center;
+      gap: 1rem;
+
+      .img {
+        height: 80%;
+
+        @include tablet {
+          height: 100%;
+          padding-bottom: 2rem;
+        }
+      }
+
+      .bold {
+        font-weight: 600;
+        margin-bottom: 2rem;
+
+        &.italic {
+          font-style: italic;
+          margin-bottom: 0;
+        }
+      }
+
+      .list {
+        margin-bottom: 2rem;
+
+        .item {
+          line-height: 1.8;
+          margin-bottom: 1rem;
+
+          .link {
+            text-decoration: underline;
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    &__quote {
+      padding-block: 3rem;
+
+      @include tablet {
+        padding-block: 5rem 4rem;
+      }
+
+      .title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.4;
+        padding-left: 4rem;
+
+        @include mobile {
+          font-size: 28px;
+        }
+        @include phone {
+          font-size: 24px;
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &::after {
+          left: 2rem;
+        }
+      }
+
+      .txt {
+        display: block;
+        text-align: end;
+        font-weight: 500;
+        font-size: 14px;
+        color: #8f9b9e;
+
+        span {
+          font-size: 12px;
+          margin-right: 10px;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

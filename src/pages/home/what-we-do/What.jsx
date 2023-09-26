@@ -16,7 +16,7 @@ const What = () => {
                                     <li className='item'>
                                         <span className='item__txt'>{ i.title }</span>
                                         <h5 className="item__title">{ i.desc }</h5>
-                                        <Link className='item__link' to={'/services/' + i.link}>Read more</Link>
+                                        <Link className='item__link' to={'/services' + i.link}>Read more</Link>
                                     </li>
                                 ))
                             }
