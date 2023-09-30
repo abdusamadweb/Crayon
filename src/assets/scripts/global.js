@@ -1,3 +1,4 @@
+import grayImg from '../images/gray-img.jpg'
 
 // format phone number
 export const formatPhone = (str) => {
@@ -13,4 +14,10 @@ export const formatPhone = (str) => {
         return el
     })
     return formatted.join("")
+}
+
+
+// base img
+export const defaultImg = (url) => {
+    return url ? url : grayImg
 }

@@ -1,0 +1,135 @@
+@use '../../../../scss' as *;
+
+.newsId {
+  position: relative;
+
+  .small {
+    width: 60%;
+    padding-block: 3rem;
+
+    @include mobile {
+      width: 90%;
+    }
+    @include phone {
+      width: 100%;
+    }
+  }
+
+  .other {
+    width: 280px;
+    position: absolute;
+    top: 10%;
+    right: 1rem;
+    border-left: 1px solid #ccc;
+
+    @include breakpoint-down(1400px) {
+      display: none;
+    }
+
+    .sub {
+      display: block;
+      padding-bottom: 6px;
+      padding-left: 10px;
+      margin-left: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    &__list {
+      padding-bottom: 1rem;
+      padding-left: 20px;
+
+      .item {
+
+        &:not(:last-child) {
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #eee;
+        }
+
+        &__link {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          color: $txt-color;
+
+          .img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+          }
+
+          .date {
+            margin-bottom: 10px;
+          }
+          .title {
+            display: block;
+            text-transform: capitalize;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+
+  &__titles {
+    margin-bottom: 2rem;
+
+    .title {
+      font-weight: 400;
+      font-size: 62px;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        font-size: 52px;
+      }
+      @include mobile {
+        font-size: 42px;
+      }
+      @include phone {
+        font-size: 32px;
+      }
+    }
+
+    .desc {
+      font-size: 22px;
+      line-height: 1.6;
+
+      @include phone {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .newsId__img {
+    max-height: 450px;
+    min-height: 350px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  .double-dot {
+    font-size: 32px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      font-size: 24px;
+    }
+
+    &::before {
+      margin-right: 2.5rem;
+    }
+    &::after {
+      top: 17px;
+      left: 1.7rem;
+
+      @include mobile {
+        top: 7px;
+      }
+    }
+  }
+
+  .desc {
+    line-height: 1.6;
+  }
+}

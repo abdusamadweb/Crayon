@@ -30,9 +30,9 @@ import Vmware from "./pages/software-partners/vmware/Vmware";
 import Diversity from "./pages/about-us/diversity/Diversity";
 import Terms from "./pages/about-us/terms-conditions/Terms";
 import GlobalPrivacy from "./pages/about-us/global-privacy/GlobalPrivacy";
-import Blogs from "./pages/resources/blogs/Blogs";
-import CaseStudies from "./pages/resources/case-studies/CaseStudies";
 import Subscribe from "./pages/resources/subscribe/Subscribe";
+import News from "./pages/resources/news/News";
+import NewsId from "./pages/resources/news/news-id/NewsId";
 
 
 const Wrapper = ({ children }) => {
@@ -85,10 +85,12 @@ const App = () => {
             <Route path='/about-us/terms-conditions' element={<Terms />} />
             <Route path='/about-us/global-privacy-notice' element={<GlobalPrivacy />} />
 
-            <Route path='/resources/blogs' element={<Blogs />} />
-            <Route path='/resources/case-studies' element={<CaseStudies />} />
-            <Route path='/resources/news' element={<CaseStudies />} />
-            <Route path='/resources/newsletters' element={<CaseStudies />} />
+            <Route path='/resources/blogs' element={<News name='blogs' />} />
+            <Route path='/resources/case-studies' element={<News name='case-studies' />} />
+            <Route path='/resources/news' element={<News name='news' />} />
+            <Route path='/resources/blogs/:id' element={<NewsId name='blogs' />} />
+            <Route path='/resources/case-studies/:id' element={<NewsId name='case-studies' />} />
+            <Route path='/resources/news/:id' element={<NewsId name='news' />} />
             <Route path='/resources/subscribe' element={<Subscribe />} />
 
             <Route path='/contact-us' element={<ContactUs />} />

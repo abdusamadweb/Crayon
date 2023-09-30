@@ -9,13 +9,13 @@ const Navs = ({ activeNav, setActiveNav, title, nav }) => {
                 <span className="sub">CATEGORIES</span>
                 <ul className="navs__list row">
                     {
-                        nav.map(i => (
+                        nav?.map(i => (
                             <li
-                                className={`item ${activeNav === i ? 'active' : ''}`}
-                                onClick={() => setActiveNav(i)}
-                                key={i}
+                                className={`item ${activeNav === i.id ? 'active' : ''}`}
+                                onClick={() => setActiveNav(i.id)}
+                                key={i.id}
                             >
-                                { i }
+                                { i.title }
                             </li>
                         ))
                     }

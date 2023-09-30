@@ -1,4 +1,4 @@
-@use '../../../scss' as *;
+@use '../../../../scss/index' as *;
 
 .resources {
 
@@ -8,6 +8,7 @@
     &__title {
       font-weight: 400;
       font-size: 80px;
+      text-transform: capitalize;
       margin-top: 0;
       margin-bottom: 3rem;
 
