@@ -7,6 +7,10 @@ const OfficesItem = ({ i }) => {
     const [open, setOpen] = useState(false)
 
 
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <li className={`item ${open ? 'active' : ''}`}>
             <div className='bor row between align-center' onClick={() => setOpen(!open)}>
@@ -14,8 +18,8 @@ const OfficesItem = ({ i }) => {
                 <i className={`fa-solid fa-chevron-right icon ${open ? 'active' : ''}`}/>
             </div>
             <div className={`clicked ${open ? 'active' : ''}`}>
-                <a className='link' href="tel: +14696464038">{formatPhone('+14696464038')}</a>
-                <a className='link' href="mailto: contact.us@crayon.com">Contact.us@crayon.com</a>
+                <a className='link' href={`mailto: ${data?.email}`}>{ data?.email || '...' }</a>
+                <a className='link' href={`tel: ${data?.phoneNumber}`}>{ formatPhone(data?.phoneNumber || '+12345') }</a>
             </div>
         </li>
     )
