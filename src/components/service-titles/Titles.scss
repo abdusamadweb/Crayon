@@ -38,7 +38,7 @@
     font-weight: 600;
     padding: 1.2rem;
     border-radius: 30px;
-    color: $txt-color;
+    color: var(--txt-color);
 
     @include mobile {
       width: 100%;

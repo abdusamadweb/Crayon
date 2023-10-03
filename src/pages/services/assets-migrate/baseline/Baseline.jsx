@@ -1,12 +1,12 @@
 import './Baseline.scss'
 import React from 'react'
-import img from '../../../../assets/images/services/assets-img.jpg'
+import {defaultImg} from "../../../../assets/scripts/global";
 
-const Baseline = () => {
+const Baseline = ({ img }) => {
     return (
         <div className='baseline'>
             <div className="container small">
-                <img className='baseline__img' src={img} alt="img"/>
+                <img className='baseline__img' src={defaultImg(img)} alt="img"/>
                 <div className="baseline__inner margin">
                     <div className='width'>
                         <h3 className="title">What is a Baseline?</h3>

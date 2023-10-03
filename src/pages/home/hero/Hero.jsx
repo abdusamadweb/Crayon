@@ -1,14 +1,24 @@
 import './Hero.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
+import $api from "../../../api"
+import bgImg from '../../../assets/images/main-hero.jpg'
 
 const Hero = () => {
+
+
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('mainPage')
+            .then(res => setResult(res.data[0]))
+    }, [])
+
+
     return (
-        <div className='hero'>
+        <div className='hero' style={{backgroundImage: `url(${result?.bgImg?.full_url || bgImg})`}}>
             <div className="container">
-                <h1 className="hero__title">
-                    We help clients optimize and innovate with software, cloud, data and AI.
-                </h1>
+                <h1 className="hero__title">{ result?.title || 'We help clients optimize and innovate with software, cloud, data and AI.' }</h1>
                 <div className='hero__btns row g2'>
                     <Link className='btn' to='/services/assess-migrate'>Our Services</Link>
                     <Link className='btn' to='/contact-us'>Contact Us</Link>

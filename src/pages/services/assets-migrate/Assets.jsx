@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Titles from "../../../components/service-titles/Titles";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import {useHref} from "react-router-dom";
@@ -8,9 +8,9 @@ import img2 from '../../../assets/images/services/controll-business.png'
 import img3 from '../../../assets/images/services/visibility-over.png'
 import img from '../../../assets/images/services/assets-img.jpg'
 import Baseline from "./baseline/Baseline";
-import Subscribe from "../component-report/Report";
-import ContactForm from "../../../components/contact-form/ContactForm";
 import Report from "../component-report/Report";
+import ContactForm from "../../../components/contact-form/ContactForm";
+import $api from "../../../api";
 
 const Assets = () => {
 
@@ -33,19 +33,27 @@ const Assets = () => {
     ]
 
 
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/assess-migrate')
+            .then(res => setResult(res.data[0]))
+    }, [href])
+
+
     return (
         <div className='assets'>
             <BreadCrumb href={href} />
             <Titles
                 sub='ASSESS & MIGRATE'
-                title='Rightsize your IT estate for a cloud future'
+                title={result?.title || 'ASSESS & MIGRATE'}
             />
             <Bubles
                 sub='MICROSOFT BASELINE ENGAGEMENT'
                 title='Begin Your Software Compliance Journey'
                 data={data}
             />
-            <Baseline />
+            <Baseline img={result?.image?.full_url} />
             <Report
                 sub='CRAYON REPORTS'
                 title='Subscribe: The State of IT Cost Optimization in 2023'

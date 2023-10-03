@@ -1,35 +1,19 @@
 import './CrayonPlatforms.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
-import platform1 from '../../assets/images/crayon-platforms/empower.png'
-import platform2 from '../../assets/images/crayon-platforms/cloud.jpg'
-import platform3 from '../../assets/images/crayon-platforms/COR.jpg'
+import $api from "../../api";
 
 const CrayonPlatforms = ({ title }) => {
 
-    const crayonPlatforms = [
-        {
-            img: platform1,
-            sub: 'CRAYON',
-            title: 'Empower-iQ',
-            desc: 'Get the most from your Microsoft investments through Empower-iQ, a dedicated portal for Microsoft Software Training expenses.',
-            link: '/'
-        },
-        {
-            img: platform2,
-            sub: 'CRAYON',
-            title: 'Cloud-iQ',
-            desc: 'Manage your cloud products, services, and economics across a single platform.',
-            link: '/'
-        },
-        {
-            img: platform3,
-            sub: 'CRAYON',
-            title: 'Crayon Online Room: COR',
-            desc: 'Crayon provides a simplified, managed cloud service to give you all the benefits of the cloud, without any of the risks. Crayon\'s experience and expertise will ensure that costs are kept low and that the predictability is high.',
-            link: '/'
-        },
-    ]
+
+    const [news, setNews] = useState([])
+    useEffect(() => {
+        $api
+            .get('/news')
+            .then(res => {
+                setNews(res.data)
+            })
+    }, [])
 
 
     return (
@@ -41,15 +25,15 @@ const CrayonPlatforms = ({ title }) => {
                 }
                 <ul className='crayon-platforms__list'>
                     {
-                        crayonPlatforms?.map(i => (
-                            <li className="item" key={i.title}>
+                        news?.slice(0, 3)?.map(i => (
+                            <li className="item" key={i.id}>
                                 <div>
-                                    <img className='item__img' src={i.img} alt="img"/>
-                                    <span className="sub">{ i.sub }</span>
+                                    <img className='item__img' src={i?.image?.full_url} alt="img"/>
+                                    <span className="sub">{ new Date(i.date).toLocaleDateString() }</span>
                                     <h5 className="item__title">{ i.title }</h5>
-                                    <p className='item__desc'>{ i.desc }</p>
+                                    <p className='item__desc'>{ i.description }</p>
                                 </div>
-                                <Link className='item__btn read-more' to={i.link}>Read More</Link>
+                                <Link className='item__btn read-more pl2' to={`/resources/news/${i.id}`}>Read More</Link>
                             </li>
                         ))
                     }

@@ -1,9 +1,9 @@
 import './NewsId.scss'
 import React, {useEffect, useState} from 'react'
 import {Link, useHref, useParams} from "react-router-dom"
-import BreadCrumb from "../../../../components/bread-crumb/BreadCrumb";
-import $api from "../../../../api";
-import {defaultImg} from "../../../../assets/scripts/global";
+import BreadCrumb from "../../../../components/bread-crumb/BreadCrumb"
+import $api from "../../../../api"
+import {defaultImg} from "../../../../assets/scripts/global"
 
 const NewsId = ({ name }) => {
 
@@ -18,7 +18,7 @@ const NewsId = ({ name }) => {
             .then(res => {
                 setResult(res.data)
             })
-    }, [name])
+    }, [name, id])
 
 
     const [otherNews, setOtherNews] = useState([])
@@ -28,10 +28,10 @@ const NewsId = ({ name }) => {
             .then(res => {
                 setOtherNews(res.data)
             })
-    }, [name])
+    }, [name, id])
 
 
-    const lines = result?.['long-description']?.split('\n');
+    const lines = result?.['long-description']?.split('\n')
 
 
     return (

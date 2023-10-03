@@ -104,14 +104,6 @@ const navList = [
                 link: '/news'
             },
             {
-                title: 'Newsletters',
-                link: '/newsletters'
-            },
-            {
-                title: 'Reports',
-                link: '/reports'
-            },
-            {
                 title: 'Subscribe',
                 link: '/subscribe'
             },

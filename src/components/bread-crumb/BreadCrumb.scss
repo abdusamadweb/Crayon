@@ -12,7 +12,7 @@
       font-weight: 600;
       font-size: 11px;
       margin-right: 6px;
-      color: $main-color;
+      color: var(--main-color);
     }
 
     &:last-child {
@@ -24,7 +24,7 @@
 
     &__link {
       text-transform: capitalize;
-      color: $txt-color;
+      color: var(--txt-color);
 
       &:hover {
         text-decoration: underline;

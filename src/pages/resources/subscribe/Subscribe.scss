@@ -82,7 +82,7 @@
 
           .link {
             text-decoration: underline;
-            color: $main-color;
+            color: var(--main-color);
           }
         }
       }
@@ -128,7 +128,7 @@
         span {
           font-size: 12px;
           margin-right: 10px;
-          color: $main-color;
+          color: var(--main-color);
         }
       }
     }

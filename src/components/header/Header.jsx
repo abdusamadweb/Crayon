@@ -1,14 +1,16 @@
 import './Header.scss'
 import React from 'react';
 import {Link, useHref} from "react-router-dom";
-import logo from '../../assets/images/logo.png'
-import logoDark from '../../assets/images/logo-black.png'
 import NavBar from "./NavBar";
 
 const Header = ({ openNav, setOpenNav }) => {
 
 
     const href = useHref()
+
+
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
 
 
     return (
@@ -18,8 +20,8 @@ const Header = ({ openNav, setOpenNav }) => {
                     <Link className='header__logo' to='/'>
                         {
                             (href === '/' || href.includes('diversity')) ?
-                                <img className='img' src={logo} alt="logo"/>
-                                : <img className='img' src={logoDark} alt="logo"/>
+                                <img className='img' src={data?.logo?.full_url} alt="logo"/>
+                                : <img className='img' src={data?.logoDark?.full_url} alt="logo"/>
                         }
                     </Link>
                     <div className='row align-center g2'>

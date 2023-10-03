@@ -1,13 +1,19 @@
 import './Partners.scss'
-import React from 'react'
-import partner1 from '../../../assets/images/partner1.png'
-import partner2 from '../../../assets/images/partner2.png'
-import partner3 from '../../../assets/images/partner3.png'
-import partner4 from '../../../assets/images/partner4.png'
-import partner5 from '../../../assets/images/partner5.png'
-import partner6 from '../../../assets/images/partner6.png'
+import React, {useEffect, useState} from 'react'
+import $api from "../../../api";
+import {defaultImg} from "../../../assets/scripts/global";
 
 const Partners = () => {
+
+
+    const [partners, setPartners] = useState([])
+    useEffect(() => {
+        $api
+            .get('/partners')
+            .then(res => setPartners(res.data))
+    }, [])
+
+
     return (
         <div className='partners'>
             <div className="container">
@@ -21,24 +27,13 @@ const Partners = () => {
                     <div className="partners__lists">
                         <span className="txt">SOFTWARE PARTNERS</span>
                         <ul className="list">
-                            <li className="item">
-                                <img className='item__img' src={partner1} alt="img"/>
-                            </li>
-                            <li className="item">
-                                <img className='item__img' src={partner2} alt="img"/>
-                            </li>
-                            <li className="item">
-                                <img className='item__img' src={partner3} alt="img"/>
-                            </li>
-                            <li className="item">
-                                <img className='item__img' src={partner4} alt="img"/>
-                            </li>
-                            <li className="item">
-                                <img className='item__img' src={partner5} alt="img"/>
-                            </li>
-                            <li className="item">
-                                <img className='item__img' src={partner6} alt="img"/>
-                            </li>
+                            {
+                                partners?.map(i => (
+                                    <li className="item" key={i.id}>
+                                        <img className='item__img' src={defaultImg(i.img?.full_url)} alt="img"/>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

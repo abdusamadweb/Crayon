@@ -2,17 +2,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+:root {
+  --main-color: #FF370F;
+  --secondary-color: #04242D;
+  --txt-color: #04242D;
+  --gray-color: #F8F8F6;
+  --body-bg: #fff;
+}
+
 body {
   font-family: $font-family;
-  color: $txt-color;
-  background: $body-bg;
+  color: var(--txt-color);
+  background: var(--body-bg);
 }
 
 .sub {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: $main-color;
+  color: var(--main-color);
 }
 
 .dotted::after {
@@ -20,7 +28,7 @@ body {
     font-size: 100px;
     line-height: 0;
     margin-left: 6px;
-    color: $main-color;
+    color: var(--main-color);
 }
 .dot {
   &::before {
@@ -30,7 +38,7 @@ body {
     margin-right: 12px;
     margin-bottom: 2px;
     border-radius: 50%;
-    background: $main-color;
+    background: var(--main-color);
   }
 }
 .double-dot {
@@ -49,7 +57,7 @@ body {
     content: '';
     margin-right: 2rem;
     border-radius: 50%;
-    background: $main-color;
+    background: var(--main-color);
   }
   &::after {
     position: absolute;
@@ -75,7 +83,7 @@ body {
     width: 1rem;
     content: counter(list) '.';
     text-align: right;
-    color: $main-color;
+    color: var(--main-color);
   }
 }
 
@@ -84,7 +92,7 @@ body {
 .read-more {
   width: fit-content;
   font-weight: 500;
-  color: $txt-color;
+  color: var(--main-color);
 
   &::after {
     position: relative;
@@ -92,22 +100,22 @@ body {
     width: 100%;
     height: 2px;
     content: '';
-    background: $main-color;
+    background: var(--main-color);
   }
 }
 
 .btn {
   padding: 10px 2rem;
   border-radius: 20px;
-  border: 2px solid $main-color;
+  border: 2px solid var(--main-color);
   color: #fff;
   background: transparent;
   transition: color 0.3s ease,
   background-color 0.3s ease;
 
   &:hover {
-    color: $txt-color;
-    background: $main-color;
+    color: var(--txt-color);
+    background: var(--main-color);
   }
 }
 

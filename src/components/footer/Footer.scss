@@ -2,7 +2,7 @@
 
 .footer {
   padding-bottom: 3rem;
-  background: $secondary-color;
+  background: var(--secondary-color);
 
   .header__search {
     color: #fff;
@@ -51,7 +51,7 @@
           color: #fff;
 
           &:hover {
-            color: $main-color;
+            color: var(--main-color);
           }
         }
       }

@@ -1,0 +1,43 @@
+@use '../../scss' as *;
+
+.route {
+
+  .small {
+    padding-block: 2rem 3rem;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 3rem;
+
+    @include mobile {
+      font-size: 32px;
+    }
+    @include phone {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+
+    .item {
+
+      &__link {
+        font-size: 24px;
+        margin-bottom: 1rem;
+        color: var(--txt-color);
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--main-color);
+        }
+
+        @include phone {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

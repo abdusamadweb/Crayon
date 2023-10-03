@@ -24,6 +24,18 @@
   &.fixed {
     position: fixed;
     z-index: $index-5;
+
+    .header__search {
+      color: var(--txt-color);
+
+      .icon {
+        color: var(--txt-color);
+      }
+    }
+
+    .header__nav-btn {
+      color: var(--txt-color);
+    }
   }
 
   &__inner {
@@ -67,17 +79,17 @@
 
   &__search {
     font-weight: 500;
-    color: $txt-color;
+    color: var(--txt-color);
 
     .icon {
       margin-right: 6px;
-      color: $txt-color;
+      color: var(--txt-color);
     }
   }
 
   &__nav-btn {
     font-weight: 500;
-    color: $txt-color;
+    color: var(--txt-color);
 
     .icon {
       width: 14px;
@@ -87,10 +99,10 @@
   }
 
   .open-nav {
-    color: $txt-color;
+    color: var(--txt-color);
 
     .icon {
-      color: $txt-color;
+      color: var(--txt-color);
     }
   }
 
@@ -148,21 +160,23 @@
         }
 
         &:hover {
-          color: $main-color;
+          .link {
+            color: var(--main-color);
+          }
 
           .icon {
-            color: $main-color;
+            color: var(--main-color);
           }
         }
 
         .link {
-          color: $txt-color;
+          color: var(--txt-color);
 
           &:hover {
-            color: $main-color;
+            color: var(--main-color);
 
             .icon {
-              color: $main-color;
+              color: var(--main-color);
             }
           }
         }
@@ -196,7 +210,7 @@
       .txt {
         font-size: 14px;
         text-transform:  uppercase;
-        color: $main-color;
+        color: var(--main-color);
 
         @include phone {
           font-size: 12px;
@@ -218,14 +232,14 @@
         }
 
         &__link {
-          color: $txt-color;
+          color: var(--txt-color);
 
           &.active {
-            color: $main-color;
+            color: var(--main-color);
           }
 
           &:hover {
-            color: $main-color;
+            color: var(--main-color);
           }
         }
       }

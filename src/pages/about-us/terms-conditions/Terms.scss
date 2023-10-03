@@ -97,7 +97,7 @@
       display: block;
       padding-bottom: 6px;
       margin-bottom: 10px;
-      border-bottom: 1px solid $main-color;
+      border-bottom: 1px solid var(--main-color);
     }
 
     .link {
@@ -108,10 +108,10 @@
 
       .icon {
         font-size: 20px;
-        color: $txt-color;
+        color: var(--txt-color);
 
         &:hover {
-          color: $main-color;
+          color: var(--main-color);
         }
       }
     }

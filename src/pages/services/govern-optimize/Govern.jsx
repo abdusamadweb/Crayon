@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import Titles from "../../../components/service-titles/Titles";
 import Bubles from "../../../components/bubles/Bubles";
@@ -10,6 +10,7 @@ import Baseline from "./baseline/Baseline";
 import Report from "../component-report/Report";
 import reportImg from "../../../assets/images/services/govern-report.jpg";
 import ContactForm from "../../../components/contact-form/ContactForm";
+import $api from "../../../api";
 
 const Govern = () => {
 
@@ -32,12 +33,20 @@ const Govern = () => {
     ]
 
 
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/govern-optimize')
+            .then(res => setResult(res.data[0]))
+    }, [href])
+
+
     return (
         <div className='govern'>
             <BreadCrumb href={href} />
             <Titles
                 sub='GOVERN & OPTIMIZE'
-                title='Optimize your hybrid and multicloud environment'
+                title={result?.title || 'GOVERN & OPTIMIZE'}
             />
             <Bubles
                 sub='CLOUD GOVERNANCE'

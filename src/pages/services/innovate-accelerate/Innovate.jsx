@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import Titles from "../../../components/service-titles/Titles";
 import Bubles from "../../../components/bubles/Bubles";
@@ -10,6 +10,7 @@ import img2 from "../../../assets/images/services/cut-costs.png";
 import img3 from "../../../assets/images/services/increase.png";
 import reportImg from "../../../assets/images/services/innovate-report.jpg";
 import Baseline from "./baseline/Baseline";
+import $api from "../../../api";
 
 const Innovate = () => {
 
@@ -32,12 +33,20 @@ const Innovate = () => {
     ]
 
 
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/innovate-accelerate')
+            .then(res => setResult(res.data[0]))
+    }, [href])
+
+
     return (
         <div className='innovate'>
             <BreadCrumb href={href} />
             <Titles
                 sub='INNOVATE & ACCELERATE'
-                title='Innovate with a scalable data platform, AI, and IoT'
+                title={result?.title || 'INNOVATE & ACCELERATE'}
             />
             <Bubles
                 sub='AI SOLUTIONS SERVICES'

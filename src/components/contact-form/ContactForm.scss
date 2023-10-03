@@ -5,7 +5,7 @@
 
   &__inner {
     display: grid;
-    grid-template-columns: 60% 30%;
+    grid-template-columns: 60% 35%;
     gap: 1rem;
 
     @include tablet {
@@ -35,7 +35,7 @@
       margin-bottom: 3px;
 
       span {
-        color: $main-color;
+        color: var(--main-color);
       }
 
       &.checkbox-txt {
@@ -48,7 +48,7 @@
       padding: 10px 1rem;
       margin-bottom: 1rem;
       border-radius: 5px;
-      border: 1px solid $txt-color;
+      border: 1px solid var(--txt-color);
 
       &.area {
         height: 120px;
@@ -69,7 +69,7 @@
       .link {
         font-weight: 500;
         text-decoration: underline;
-        color: $main-color;
+        color: var(--main-color);
       }
     }
 
@@ -78,8 +78,18 @@
       font-weight: 500;
       padding: 1rem;
       border-radius: 5px;
-      border: 1px solid $txt-color;
-      color: $txt-color;
+      border: 1px solid var(--txt-color);
+      color: var(--txt-color);
+    }
+  }
+
+  .form2 {
+    width: 100%;
+    height: 800px;
+    border: none;
+    
+    .space-y-6 {
+      background: #000;
     }
   }
 }

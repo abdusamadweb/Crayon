@@ -54,13 +54,13 @@
           margin-right: 12px;
           margin-bottom: 2px;
           border-radius: 50%;
-          background: $main-color;
+          background: var(--main-color);
         }
       }
     }
 
     .btn {
-      color: $txt-color;
+      color: var(--txt-color);
     }
   }
 }

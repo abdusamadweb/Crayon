@@ -4,7 +4,7 @@ import './assets/styles/global.css'
 import './App.scss'
 
 import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
-import {useLayoutEffect, useState} from "react"
+import {useEffect, useLayoutEffect, useState} from "react"
 import Header from "./components/header/Header"
 import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer";
@@ -33,6 +33,9 @@ import GlobalPrivacy from "./pages/about-us/global-privacy/GlobalPrivacy";
 import Subscribe from "./pages/resources/subscribe/Subscribe";
 import News from "./pages/resources/news/News";
 import NewsId from "./pages/resources/news/news-id/NewsId";
+import navList from "./assets/scripts/navList";
+import GlobalRoute from "./components/global-route/GlobalRoute";
+import $api from "./api";
 
 
 const Wrapper = ({ children }) => {
@@ -50,6 +53,29 @@ const App = () => {
   const [openNav, setOpenNav] = useState(false)
 
 
+  useEffect(() => {
+    $api
+        .get('/general-settings')
+        .then(res => {
+          const jsonString = JSON.stringify(res.data[0])
+          localStorage.setItem('globalData', jsonString)
+        })
+  }, [])
+
+
+  // colors from APi
+  useEffect(() => {
+    $api
+        .get('/colors')
+        .then(res => {
+          document.documentElement.style.setProperty('--main-color', res.data[0].mainColor)
+          document.documentElement.style.setProperty('--secondary-color', res.data[0].secondaryColor)
+          document.documentElement.style.setProperty('--txt-color', res.data[0].textColor)
+          document.documentElement.style.setProperty('--gray-color', res.data[0].itemColor)
+        })
+  }, [])
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -60,6 +86,12 @@ const App = () => {
           <Routes>
 
             <Route path='/' element={<Home />} />
+
+            {
+              navList?.map(i => i.list && (
+                  <Route path={i.link} element={<GlobalRoute i={i} />}/>
+              ))
+            }
 
             <Route path='/services/assess-migrate' element={<Assets />} />
             <Route path='/services/govern-optimize' element={<Govern />} />

@@ -24,18 +24,7 @@ const OfficesItem = ({ i }) => {
 const Offices = () => {
 
     const states = [
-        'Austin',
-        'Boston',
-        'Charlotte',
-        'Chicago',
-        'Cleveland',
-        'Dallas',
-        'Denver',
-        'Irvine',
-        'Minneapolis',
-        'New York',
-        'Seattle',
-        'Tampa',
+        'Texas'
     ]
 
 

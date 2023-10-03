@@ -39,7 +39,7 @@
         font-weight: 400;
         font-size: 20px;
         margin-bottom: 2rem;
-        color: $main-color;
+        color: var(--main-color);
       }
 
       .desc {
@@ -48,7 +48,7 @@
         margin-bottom: 1rem;
 
         span {
-          color: $main-color;
+          color: var(--main-color);
         }
       }
     }

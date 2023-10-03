@@ -1,7 +1,9 @@
 import './Titles.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import $api from "../../api";
 
 const Titles = ({ sub, title, desc }) => {
+
     return (
         <div className='services-titles'>
             <div className="container">

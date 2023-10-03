@@ -16,29 +16,40 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      padding-left: 2rem;
       padding-bottom: 1rem;
-      background: #F8F8F6;
+      background: var(--gray-color);
 
       &__img {
         width: 100%;
+        height: 20vw;
         margin-bottom: 1rem;
+        object-fit: cover;
+
+        @include tablet {
+          height: 40vw;
+        }
+        @include phone {
+          height: 60vw;
+        }
       }
 
       .sub {
         display: block;
         font-weight: 500;
+        padding-left: 2rem;
       }
 
       &__title {
         font-weight: 500;
         font-size: 20px;
+        padding-left: 2rem;
         padding-right: 10px;
         margin-bottom: 2rem;
       }
 
       &__desc {
         line-height: 1.5;
+        padding-left: 2rem;
         padding-right: 10px;
         margin-bottom: 2rem;
 

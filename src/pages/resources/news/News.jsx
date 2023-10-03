@@ -5,7 +5,6 @@ import {Link, useHref} from "react-router-dom";
 import $api from "../../../api";
 import Navs from "./component-navs/Navs";
 import {defaultImg} from "../../../assets/scripts/global";
-import CrayonPlatforms from "../../../components/crayon-platforms/CrayonPlatforms";
 
 const News = ({ name }) => {
 
@@ -88,7 +87,6 @@ const News = ({ name }) => {
                     }
                 </ul>
             </div>
-            <CrayonPlatforms />
         </div>
     )
 }

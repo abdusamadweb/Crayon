@@ -25,7 +25,7 @@
         font-size: 14px;
         line-height: 1.5;
         margin-bottom: 1rem;
-        color: $main-color;
+        color: var(--main-color);
       }
 
       .title {
@@ -44,7 +44,7 @@
       .link {
         width: fit-content;
         font-weight: 500;
-        color: $txt-color;
+        color: var(--txt-color);
 
         &::after {
           position: relative;
@@ -52,7 +52,7 @@
           width: 100%;
           height: 2px;
           content: '';
-          background: $main-color;
+          background: var(--main-color);
         }
       }
     }
@@ -62,7 +62,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       padding-inline: 3rem 0;
-      background: #F8F8F6;
+      background: var(--gray-color);
 
       @include tablet {
         grid-template-columns: 1fr;

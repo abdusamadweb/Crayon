@@ -25,7 +25,7 @@
       gap: 7rem;
       padding: 6rem 7rem 5rem;
       margin-bottom: 2rem;
-      background: #F8F8F6;
+      background: var(--gray-color);
 
       @include tablet {
         grid-template-columns: 1fr;
@@ -73,7 +73,7 @@
 
       .item {
         padding: 2.5rem 2rem 2rem;
-        background: #F8F8F6;
+        background: var(--gray-color);
 
         &__date {
           margin-bottom: 10px;
@@ -100,6 +100,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      padding-bottom: 4rem;
 
       @include tablet {
         grid-template-columns: 1fr;
@@ -109,17 +110,25 @@
       .item {
 
         &__img {
-          //width: 100%;
-          //height: 30vw;
+          width: 100%;
+          height: 30vw;
           display: block;
           margin: 0 auto;
           object-fit: cover;
+
+          @include mobile {
+            height: 55vw;
+          }
         }
 
         &__inner {
           height: 320px;
           padding: 3rem 2rem 2rem;
-          background: #F8F8F6;
+          background: var(--gray-color);
+
+          @include mobile {
+            padding-top: 2rem;
+          }
 
           .date {
             margin-bottom: 10px;

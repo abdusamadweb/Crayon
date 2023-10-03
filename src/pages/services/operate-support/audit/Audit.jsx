@@ -1,8 +1,8 @@
 import './Audit.scss'
 import React from 'react'
-import auditImg from '../../../../assets/images/services/audit-img.png'
+import {defaultImg} from "../../../../assets/scripts/global";
 
-const Audit = () => {
+const Audit = ({ img }) => {
     return (
         <div className='audit'>
             <div className="container small">
@@ -16,7 +16,7 @@ const Audit = () => {
                             Our software asset management know-how enables us to specifically identify missing data and thus avoid negative assumptions from the auditors. Benefit from our extensive experience from a large number of license audits from all major vendors (Microsoft, IBM, Adobe, Oracle, and more).
                         </p>
                     </div>
-                    <img className='audit__img' src={auditImg} alt="img"/>
+                    <img className='audit__img' src={defaultImg(img)} alt="img"/>
                 </div>
             </div>
         </div>

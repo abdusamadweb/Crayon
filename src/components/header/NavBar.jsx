@@ -23,17 +23,13 @@ const NavBar = ({ openNav, setOpenNav }) => {
                                     setActiveNavTitle(i.title)
                                 }}
                             >
-                                {
-                                    i.list ?
-                                        i.title
-                                        : <Link
-                                            className='link'
-                                            to={i.link}
-                                            onClick={() => setOpenNav(false)}
-                                        >
-                                            { i.title }
-                                    </Link>
-                                }
+                                <Link
+                                    className='link'
+                                    to={i.link}
+                                    onClick={() => setOpenNav(false)}
+                                >
+                                    { i.title }
+                                </Link>
                                 {
                                     i.list &&
                                     <i className="fa-solid fa-chevron-right icon"/>

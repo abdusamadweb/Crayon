@@ -10,7 +10,6 @@
     padding-inline: 10vw;
 
     color: #fff;
-    background-image: url('../../../assets/images/main-hero.jpg');
     background-position: center center;
     background-size: cover;
 
@@ -46,15 +45,15 @@
       .btn {
         padding: 10px 2rem;
         border-radius: 20px;
-        border: 2px solid $main-color;
+        border: 2px solid var(--main-color);
         color: #fff;
         background: transparent;
         transition: color 0.3s ease,
         background-color 0.3s ease;
 
         &:hover {
-          color: $txt-color;
-          background: $main-color;
+          color: var(--txt-color);
+          background: var(--main-color);
         }
       }
     }
