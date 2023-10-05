@@ -6,6 +6,16 @@ import {defaultImg} from "../../../assets/scripts/global";
 const Partners = () => {
 
 
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/mainPage')
+            .then(res => {
+                setResult(res.data[0])
+            })
+    }, [])
+
+
     const [partners, setPartners] = useState([])
     useEffect(() => {
         $api
@@ -20,9 +30,7 @@ const Partners = () => {
                 <div className="partners__inner">
                     <div className="partners__titles">
                         <span className="txt">OUR PARTNERS</span>
-                        <h4 className="title">
-                            We are accredited and have strong strategic relationships with all leading technology vendors worldwide.
-                        </h4>
+                        <h4 className="title">{ result?.['partners-title'] || 'Partners Title' }</h4>
                     </div>
                     <div className="partners__lists">
                         <span className="txt">SOFTWARE PARTNERS</span>

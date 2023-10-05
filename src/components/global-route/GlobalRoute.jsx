@@ -1,11 +1,19 @@
 import './GlobalRoute.scss'
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link, useHref} from "react-router-dom"
 import BreadCrumb from "../bread-crumb/BreadCrumb"
 
 const GlobalRoute = ({ i }) => {
 
     const href = useHref()
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+    useEffect(() => {
+        document.title = `${data?.['app-name']} - ${href.slice(1).toUpperCase()}` || 'DIS'
+    }, [data])
 
 
     return (

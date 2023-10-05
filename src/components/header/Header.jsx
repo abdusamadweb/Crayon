@@ -25,7 +25,7 @@ const Header = ({ openNav, setOpenNav }) => {
                         }
                     </Link>
                     <div className='row align-center g2'>
-                        <Link className={`header__search ${openNav ? 'open-nav' : ''}`} to='/search'>
+                        <Link className={`header__search ${openNav ? 'open-nav' : ''}`} to='/'>
                             <i className="fa-solid fa-magnifying-glass icon"/>
                             <span className='txt'>Search</span>
                         </Link>

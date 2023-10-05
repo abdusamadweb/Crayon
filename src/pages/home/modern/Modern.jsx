@@ -1,8 +1,21 @@
 import './Modern.scss'
-import React from 'react'
-import img from '../../../assets/images/modern-img.png'
+import React, {useEffect, useState} from 'react'
+import $api from "../../../api";
+import {defaultImg} from "../../../assets/scripts/global";
 
 const Modern = () => {
+
+
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/mainPage')
+            .then(res => {
+                setResult(res.data[0])
+            })
+    }, [])
+
+
     return (
         <div className='modern'>
             <div className="modern__inner row flex-column between">
@@ -26,7 +39,7 @@ const Modern = () => {
                     </div>
                     {/*<Link className='link' to=''>Learn more</Link>*/}
                 </div>
-                <img className='img' src={img} alt="img"/>
+                <img className='img' src={defaultImg(result?.['modern-image']?.full_url)} alt="img"/>
             </div>
         </div>
     )

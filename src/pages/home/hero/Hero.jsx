@@ -2,7 +2,7 @@ import './Hero.scss'
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import $api from "../../../api"
-import bgImg from '../../../assets/images/main-hero.jpg'
+import {defaultImg} from "../../../assets/scripts/global";
 
 const Hero = () => {
 
@@ -16,7 +16,7 @@ const Hero = () => {
 
 
     return (
-        <div className='hero' style={{backgroundImage: `url(${result?.bgImg?.full_url || bgImg})`}}>
+        <div className='hero' style={{backgroundImage: `url(${defaultImg(result?.bgImg?.full_url)})`}}>
             <div className="container">
                 <h1 className="hero__title">{ result?.title || 'We help clients optimize and innovate with software, cloud, data and AI.' }</h1>
                 <div className='hero__btns row g2'>

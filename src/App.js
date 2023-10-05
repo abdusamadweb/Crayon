@@ -53,6 +53,7 @@ const App = () => {
   const [openNav, setOpenNav] = useState(false)
 
 
+  // to localeStore
   useEffect(() => {
     $api
         .get('/general-settings')
@@ -61,6 +62,8 @@ const App = () => {
           localStorage.setItem('globalData', jsonString)
         })
   }, [])
+  const storedData = localStorage.getItem('globalData')
+  const data = JSON.parse(storedData)
 
 
   // colors from APi
@@ -74,6 +77,47 @@ const App = () => {
           document.documentElement.style.setProperty('--gray-color', res.data[0].itemColor)
         })
   }, [])
+
+
+  // favicon
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'icon'
+    link.href = data?.favicon?.full_url
+
+    const link2 = document.createElement('link')
+    link2.rel = 'apple-touch-icon'
+    link2.href = data?.favicon?.full_url
+
+    document.head.appendChild(link)
+
+    return () => {
+      document.head.removeChild(link)
+    }
+  }, [data])
+
+
+  // adding meta-tags
+  const [keywords, setKeywords] = useState('DIS')
+  useEffect(() => {
+    $api
+        .get('/seo')
+        .then(res => {
+          setKeywords(res.data[0]?.seo)
+        })
+  }, [])
+  useEffect(() => {
+    const metaKeywordsTag = document.querySelector('meta[name="keywords"]')
+    if (metaKeywordsTag) {
+      metaKeywordsTag.setAttribute('content', keywords)
+    }
+  }, [keywords])
+
+
+  // page title
+  useEffect(() => {
+    document.title = data?.['app-name'] || 'DIS'
+  }, [data])
 
 
   return (

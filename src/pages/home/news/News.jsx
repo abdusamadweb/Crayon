@@ -1,7 +1,6 @@
 import './News.scss'
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
-import blogs1 from '../../../assets/images/blogs1.jpg'
 import $api from "../../../api";
 
 const News = () => {
