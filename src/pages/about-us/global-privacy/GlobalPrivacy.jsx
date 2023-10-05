@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
 import $api from "../../../api";
+import {formatPhone} from "../../../assets/scripts/global";
 
 const GlobalPrivacy = () => {
 
@@ -67,23 +68,23 @@ const GlobalPrivacy = () => {
                         <span className="sub">{ data?.['app-name'] } GROUP AS</span>
                         <div className="d-flex between g2">
                             <span className="desc">Postal Address:</span>
-                            <span className="desc">Sandakerveien 114a, 0484 Oslo, Norway</span>
+                            <address className='address'>{ data?.address || '...' }</address>
                         </div>
                         <div className="d-flex between g2">
                             <span className="desc">Address:</span>
-                            <span className="desc">Landsvägen 50A, 17263 Sundbyberg, Stockholm, Sweden</span>
+                            <address className='address'>{ data?.address || '...' }</address>
                         </div>
                         <div className="d-flex between g2">
                             <span className="desc">Telephone:</span>
-                            <span className="desc">+47 22 89 1000</span>
+                            <a className='link' href={`tel: ${data?.phoneNumber}`}>{ formatPhone(data?.phoneNumber || '+12345') }</a>
                         </div>
                         <div className="d-flex between g2">
                             <span className="desc">Email address:</span>
-                            <span className="desc">clouddesk@crayon.com </span>
+                            <a className='link' href={`mailto: ${data?.email}`}>{ data?.email || '...' }</a>
                         </div>
                         <div className="d-flex between g2">
                             <span className="desc">Registration Number:</span>
-                            <span className="desc">981125592</span>
+                            <a className='link' href={`tel: ${data?.phoneNumber}`}>{ formatPhone(data?.phoneNumber || '+12345') }</a>
                         </div>
                     </div>
                     <div>
