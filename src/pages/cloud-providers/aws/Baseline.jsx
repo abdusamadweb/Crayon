@@ -1,25 +1,32 @@
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
                 <div className="baseline__inner">
                     <div>
                         <h3 className="title">
-                            Crayon and AWS better together
+                            { data?.['app-name'] } and AWS better together
                         </h3>
                         <p className="desc">
-                            Crayon has long experience in helping customers migrate to the cloud, modernizing their applications to utilize cloud-native services, and delivering Managed Services to our customers.
+                            { data?.['app-name'] } has long experience in helping customers migrate to the cloud, modernizing their applications to utilize cloud-native services, and delivering Managed Services to our customers.
                         </p>
                         <p className="desc">
                             Adoption of cloud services covers a wide range of topics from application requirements to technical skills and operational processes. When deploying your applications to the cloud we want to ensure that you identify the right workloads to move in the right order to the right technology platform.
                         </p>
                         <p className="desc">
-                            Putting the customer first is in the DNA for both Crayon and AWS, to ensure your solution is secure, cost-effective and running at peak performance.
+                            Putting the customer first is in the DNA for both { data?.['app-name'] } and AWS, to ensure your solution is secure, cost-effective and running at peak performance.
                         </p>
                         <p className="desc">
-                            Following the Crayon Cloud Adoption Framework, we utilize a data-driven approach to assess and analyze the current infrastructure with a special focus on Cost, Performance, Optimization and Licensing.
+                            Following the { data?.['app-name'] } Cloud Adoption Framework, we utilize a data-driven approach to assess and analyze the current infrastructure with a special focus on Cost, Performance, Optimization and Licensing.
                         </p>
                         <p className="desc">
                             This results in a Total Cost of Ownership (TCO) -based Cloud Migration plan that safely guides our customers to the cloud.

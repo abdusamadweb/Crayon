@@ -15,13 +15,18 @@ const Microsoft = () => {
     const arr = ['We are a top 10 global Microsoft LSP', 'A top 3 Global SPLA', 'Azure Expert MSP partner']
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='microsoft cloud-providers'>
             <BreadCrumb href={href} />
             <Titles
                 sub='MICROSOFT'
                 title='A Proud Top 10 Global Microsoft Partner'
-                desc1='If you need a partner with the highest expertise on Microsoft technology, and understand if you are buying the right solutions at the right price, choose Crayon.'
+                desc1={`If you need a partner with the highest expertise on Microsoft technology, and understand if you are buying the right solutions at the right price, choose ${ data?.['app-name'] }.`}
                 desc2='With over 350 Microsoft Certified Professionals, we have Gold Partner status and have been named Partner of the Year in 2019 for Artificial Intelligence and Machine learning.'
                 strong='Partner of the Year'
                 list={arr}

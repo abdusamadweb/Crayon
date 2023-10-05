@@ -2,6 +2,13 @@ import './Baseline.scss'
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
@@ -9,7 +16,7 @@ const Baseline = () => {
                     <div>
                         <h3 className="title">Microsoft Experts for Two Decades</h3>
                         <p className='desc'>
-                            Crayon has a long-standing relationship globally with Microsoft.
+                            { data?.['app-name'] } has a long-standing relationship globally with Microsoft.
                         </p>
                         <p className="desc">
                             From our company’s beginning we’ve grown from being one of the best license resellers in the world to becoming a company that has built their services around cloud technology and digital transformation.

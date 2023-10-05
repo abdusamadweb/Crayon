@@ -2,13 +2,20 @@ import './Baseline.scss'
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
                 <div className="baseline__inner">
                     <div>
                         <h3 className="title">
-                            Crayon is Your Full-Service Google Consultant
+                            { data?.['app-name'] } is Your Full-Service Google Consultant
                         </h3>
                         <div>
                             <h4 className="title2">Cloud Migrations</h4>
@@ -19,13 +26,13 @@ const Baseline = () => {
                         <div>
                             <h4 className="title2">Innovation</h4>
                             <p className="desc">
-                                Some of our customers are ready for innovation. We can help with that too. Crayon champions Data Centers of Excellence with Data & AI/ML managed services. Find out where you are in your data journey with our free Data Assessment below with instant results, no strings attached.
+                                Some of our customers are ready for innovation. We can help with that too. { data?.['app-name'] } champions Data Centers of Excellence with Data & AI/ML managed services. Find out where you are in your data journey with our free Data Assessment below with instant results, no strings attached.
                             </p>
                         </div>
                         <div>
                             <h4 className="title2">Cloud Migrations</h4>
                             <p className="desc">
-                                The Google Cloud platform is growing rapidly and we are here for it. By using Google and Crayon technology and experience in extracting value from data to build infrastructure on an unprecedented scale – we aim to democratize IT Cost Optimization and lead companies to innovation through Data, Artificial Intelligence and Machine learning.
+                                The Google Cloud platform is growing rapidly and we are here for it. By using Google and { data?.['app-name'] } technology and experience in extracting value from data to build infrastructure on an unprecedented scale – we aim to democratize IT Cost Optimization and lead companies to innovation through Data, Artificial Intelligence and Machine learning.
                             </p>
                         </div>
                     </div>

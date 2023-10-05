@@ -41,6 +41,11 @@ const Assets = () => {
     }, [href])
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const dataa = JSON.parse(storedData)
+
+
     return (
         <div className='assets'>
             <BreadCrumb href={href} />
@@ -55,7 +60,7 @@ const Assets = () => {
             />
             <Baseline img={result?.image?.full_url} />
             <Report
-                sub='CRAYON REPORTS'
+                sub={`${ dataa?.['app-name'] } REPORTS`}
                 title='Subscribe: The State of IT Cost Optimization in 2023'
                 desc='New global research into how businesses manage their budgets, where they struggle and how they are cutting costs.'
                 img={img}

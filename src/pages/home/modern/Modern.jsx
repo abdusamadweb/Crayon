@@ -16,6 +16,11 @@ const Modern = () => {
     }, [])
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='modern'>
             <div className="modern__inner row flex-column between">
@@ -32,7 +37,7 @@ const Modern = () => {
                 <div className='row flex-column between'>
                     <div>
                         <span className='txt'>MODERN WORK ASSESSMENTS - FUNDING AVAILABLE</span>
-                        <h4 className="title">Crayon Named a Leader by Gartner for the 2nd Consecutive Year</h4>
+                        <h4 className="title">{ data?.['app-name'] } Named a Leader by Gartner for the 2nd Consecutive Year</h4>
                         <p className="desc">
                             2021 Gartner Magic Quadrant for Software Asset Management Managed Services
                         </p>

@@ -5,6 +5,13 @@ import img2 from '../../../assets/images/career-culture-img2.png'
 import {Link} from "react-router-dom";
 
 const Culture = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='culture'>
             <div className="container">
@@ -42,7 +49,7 @@ const Culture = () => {
                         </div>
                         <div className="mission__imgs">
                             <p className="desc">
-                                Do you know how it feels to look forward to your work day? We do! That's why 91% of Crayon employees agreed we were a
+                                Do you know how it feels to look forward to your work day? We do! That's why 91% of { data?.['app-name'] } employees agreed we were a
                                 <a className='link' href="https://www.greatplacetowork.com/certified-company/7046741">Great Place to Work</a>.
                             </p>
                             <img className='img' src={img} alt="webp"/>
@@ -54,7 +61,7 @@ const Culture = () => {
                     <div className="titles">
                         <span className='title'>Diversity, Equity, and Inclusion</span>
                         <p className='desc'>
-                            At Crayon, we believe people are what makes us great. They are at the core of everything we do. We strive to foster an environment with diverse backgrounds and experiences and a culture where ALL perspectives are welcomed and heard, people are respected and valued, and innovation is encouraged.
+                            At { data?.['app-name'] }, we believe people are what makes us great. They are at the core of everything we do. We strive to foster an environment with diverse backgrounds and experiences and a culture where ALL perspectives are welcomed and heard, people are respected and valued, and innovation is encouraged.
                         </p>
                         <Link className="btn" to='/about-us/diversity-equity-inclusion'>Diversity, Equity, and Inclusion</Link>
                     </div>

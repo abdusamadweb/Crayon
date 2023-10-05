@@ -41,6 +41,11 @@ const Govern = () => {
     }, [href])
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const dataa = JSON.parse(storedData)
+
+
     return (
         <div className='govern'>
             <BreadCrumb href={href} />
@@ -55,7 +60,7 @@ const Govern = () => {
             />
             <Baseline />
             <Report
-                sub='CRAYON REPORTS'
+                sub={`${ dataa?.['app-name'] } REPORTS`}
                 title='A Practical Guide to IT Cost Optimization'
                 desc='IT cost optimization is the process of continually evaluating and configuring all the cloud resources that drive the applications, infrastructures, and workloads of your business.'
                 img={reportImg}

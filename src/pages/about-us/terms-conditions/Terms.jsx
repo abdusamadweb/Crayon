@@ -1,11 +1,25 @@
 import './Terms.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
+import $api from "../../../api";
 
 const Terms = () => {
 
     const href = useHref()
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
+    const [links, setLinks] = useState([])
+    useEffect(() => {
+        $api
+            .get('/social-links')
+            .then(res => setLinks(res.data[0]))
+    }, [])
 
 
     return (
@@ -14,26 +28,14 @@ const Terms = () => {
             <div className="social absolute">
                 <span className="sub">SHARE</span>
                 <div>
-                    <a
-                        className='link'
-                        href="https://www.twitter.com/share?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
-                        <i className="fa-brands fa-twitter icon"/>
-                    </a>
-                    <a
-                        className='link'
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
+                    <a className='link' href={links?.facebook} target='_blank'>
                         <i className="fa-brands fa-facebook-f icon"/>
                     </a>
-                    <a
-                        className='link'
-                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
+                    <a className='link' href={links?.linkedin} target='_blank'>
                         <i className="fa-brands fa-linkedin-in icon"/>
+                    </a>
+                    <a className='link' href={links?.twitter} target='_blank'>
+                        <i className="fa-brands fa-twitter icon"/>
                     </a>
                 </div>
             </div>
@@ -58,7 +60,7 @@ const Terms = () => {
                             <b>Partner</b> means, the Channel Partner that is signing this <b>Agreement</b>.
                         </li>
                         <li className="desc dot">
-                            <b>Licensor/Publisher/Supplier</b> means (i) the manufacturer of the software provided, (ii) the company being the Partner’s counterpart in the software license agreement, and/or (iii) the company to which Crayon reports Partner’s License Use and (if applicable) pays license fees on behalf of the
+                            <b>Licensor/Publisher/Supplier</b> means (i) the manufacturer of the software provided, (ii) the company being the Partner’s counterpart in the software license agreement, and/or (iii) the company to which { data?.['app-name'] } reports Partner’s License Use and (if applicable) pays license fees on behalf of the
                         </li>
                         <li className="desc dot">
                             <b>License</b> Use means <b>Licensor/Publisher/Supplier</b> use rights of licensed
@@ -86,7 +88,7 @@ const Terms = () => {
                 <div className="wrap">
                     <h4 className="title2">1.2. Licensing programs support</h4>
                     <p className="desc">
-                        Crayon shall be available for general questions via telephone, e-mail and/or chat through the designated channel in regards to Licensor/Publisher/Supplier Products.
+                        { data?.['app-name'] } shall be available for general questions via telephone, e-mail and/or chat through the designated channel in regards to Licensor/Publisher/Supplier Products.
                     </p>
                 </div>
                 <div className="wrap">
@@ -99,26 +101,26 @@ const Terms = () => {
                     </p>
                     <ul className="list">
                         <li className="desc dot">
-                            In case the Partner declare bankruptcy, Crayon is willing to help moving the current end- customer(s) to another partner in agreement with the Partner
+                            In case the Partner declare bankruptcy, { data?.['app-name'] } is willing to help moving the current end- customer(s) to another partner in agreement with the Partner
                         </li>
                         <li className="desc dot">
-                            In case Crayon declare bankruptcy, Crayon will work with the partner to move their existing agreements to another reseller/distributor/aggregator in agreement with the
+                            In case { data?.['app-name'] } declare bankruptcy, { data?.['app-name'] } will work with the partner to move their existing agreements to another reseller/distributor/aggregator in agreement with the
                         </li>
                     </ul>
                     <p className="desc">
-                        If the Partner (i) repeatedly fails to report License Use timely to Crayon, (ii) repeatedly obviously reports (or instructs Crayon to report) incorrect License Use to Crayon, or (iii) is in more than fourteen (14) days delayed with the payment of an invoice (or a part thereof), then that shall be deemed a material breach of this Agreement, which entitles Crayon to terminate the Agreement forthwith.
+                        If the Partner (i) repeatedly fails to report License Use timely to { data?.['app-name'] }, (ii) repeatedly obviously reports (or instructs { data?.['app-name'] } to report) incorrect License Use to { data?.['app-name'] }, or (iii) is in more than fourteen (14) days delayed with the payment of an invoice (or a part thereof), then that shall be deemed a material breach of this Agreement, which entitles { data?.['app-name'] } to terminate the Agreement forthwith.
                     </p>
                 </div>
                 <div className="wrap">
                     <h4 className="title2">1.4. Confidentiality</h4>
                     <p className="desc">
-                        The Partner agrees to keep, and procure to be kept secret, strictly confidential, all information in any form or medium (whether disclosed orally or in writing, before or after the execution of this Agreement) that has been designated as confidential by Crayon; together with all other information which relates to the business, affairs, products, Intellectual Property Rights, developments, trade secrets, personnel, sub- contractors, partners and suppliers, including the terms of this Agreement, or information which otherwise may reasonably be regarded as confidential information (“Confidential Information”).
+                        The Partner agrees to keep, and procure to be kept secret, strictly confidential, all information in any form or medium (whether disclosed orally or in writing, before or after the execution of this Agreement) that has been designated as confidential by { data?.['app-name'] }; together with all other information which relates to the business, affairs, products, Intellectual Property Rights, developments, trade secrets, personnel, sub- contractors, partners and suppliers, including the terms of this Agreement, or information which otherwise may reasonably be regarded as confidential information (“Confidential Information”).
                     </p>
                     <p className="desc">
-                        Crayon is the processor of such data and undertakes not to process personal data for any other purpose or in any other respect than strictly in accordance with this Agreement and the Partner’s instructions. The Partner is aware that Crayon, within the scope of this Agreement, may disclose personal data to Licensor/Publisher/Supplier without the Partner’s additional written consent.
+                        { data?.['app-name'] } is the processor of such data and undertakes not to process personal data for any other purpose or in any other respect than strictly in accordance with this Agreement and the Partner’s instructions. The Partner is aware that Crayon, within the scope of this Agreement, may disclose personal data to Licensor/Publisher/Supplier without the Partner’s additional written consent.
                     </p>
                     <p className="desc">
-                        If Crayon receives an enquiry from an authority or another third party on the existence or content of personal data for which the Partner and/or another company/unit in the Partner Group is controller of personal data, Crayon shall not disclose any data or content but pass on such enquiry to the Partner without delay.
+                        If { data?.['app-name'] } receives an enquiry from an authority or another third party on the existence or content of personal data for which the Partner and/or another company/unit in the Partner Group is controller of personal data, { data?.['app-name'] } shall not disclose any data or content but pass on such enquiry to the Partner without delay.
                     </p>
                 </div>
                 <div className="wrap">
@@ -126,13 +128,13 @@ const Terms = () => {
                     <div>
                         <h5 className="title3">1.5.1 Payment terms</h5>
                         <p className="desc">
-                            Crayon may assign its right to payments under this Agreement to a factoring company, local representative or collection company.
+                            { data?.['app-name'] } may assign its right to payments under this Agreement to a factoring company, local representative or collection company.
                         </p>
                         <p className="desc">
                             Partner may not withhold payment or make deductions of any kind, including but not limited to returns, credit notes, price adjustments, billing errors, handling fees, fines imposed by Partner or any other claims or charges.
                         </p>
                         <p className="desc">
-                            Crayon may change credit or payment terms for unfilled orders if Partner’s financial condition, previous payment record, or relationship with Crayon, merits such change.
+                            { data?.['app-name'] } may change credit or payment terms for unfilled orders if Partner’s financial condition, previous payment record, or relationship with { data?.['app-name'] }, merits such change.
                         </p>
                     </div>
                     <div>
@@ -141,7 +143,7 @@ const Terms = () => {
                             It is of utmost important that Partner settles all invoices on or before due date. Late payment may be charged 1.5% penalty of the amount due, for the given period, as a late payment charges.
                         </p>
                         <p className="desc">
-                            If any part of an invoice is overdue, Crayon is entitled to report zero (0) license usage to the Licensor/Publisher/Supplier and/or to reject any additional license usage until the Partner settles his outstanding balance (including interest) in full.
+                            If any part of an invoice is overdue, { data?.['app-name'] } is entitled to report zero (0) license usage to the Licensor/Publisher/Supplier and/or to reject any additional license usage until the Partner settles his outstanding balance (including interest) in full.
                         </p>
                     </div>
                 </div>
@@ -175,13 +177,13 @@ const Terms = () => {
                         The headings of this Agreement are for convenience only and shall not define, extend or limit any of the terms or provisions hereof.
                     </p>
                     <p className="desc">
-                        The Partner shall, without delay, notify Crayon upon learning of circumstances which may necessitate a modification of any time schedule for the performance of and delivery by Crayon.
+                        The Partner shall, without delay, notify { data?.['app-name'] } upon learning of circumstances which may necessitate a modification of any time schedule for the performance of and delivery by { data?.['app-name'] }.
                     </p>
                     <p className="desc">
-                        To the maximum extent permissible by law, all conditions and warranties which may be excluded by applicable law are hereby expressly excluded. No express conditions or warranties are made by Crayon except those expressly provided by Crayon in this Agreement.
+                        To the maximum extent permissible by law, all conditions and warranties which may be excluded by applicable law are hereby expressly excluded. No express conditions or warranties are made by { data?.['app-name'] } except those expressly provided by { data?.['app-name'] } in this Agreement.
                     </p>
                     <p className="desc">
-                        Crayon is entitled to amend these general terms & conditions in order to reflect any changes and updates received from the Licensor/Publisher/Supplier or if Crayon has reasonable grounds for such amendment. Should the partner disagree with those amendment, the partner has the right to terminate as per Section
+                        { data?.['app-name'] } is entitled to amend these general terms & conditions in order to reflect any changes and updates received from the Licensor/Publisher/Supplier or if { data?.['app-name'] } has reasonable grounds for such amendment. Should the partner disagree with those amendment, the partner has the right to terminate as per Section
                     </p>
                     <p className="desc">
                         1.3. Partner has to make payment all amounts due till the date of actual termination.
@@ -190,7 +192,7 @@ const Terms = () => {
                 <div className="wrap">
                     <h4 className="title2">1.8. Dispute resolution</h4>
                     <p className="desc">
-                        This Agreement shall be governed by the substantive laws of the principal place of business of the Crayon affiliate being the party to this Agreement, without reference to its choice and conflict of law’s provisions. All disputes arising out of or in connection with this Agreement shall be finally settled by the ordinary court of the principal place of business of the Crayon affiliate being the party to this Agreement, except that Crayon may, at its own option, bring suit for collection in the country where the Partner is located.
+                        This Agreement shall be governed by the substantive laws of the principal place of business of the { data?.['app-name'] } affiliate being the party to this Agreement, without reference to its choice and conflict of law’s provisions. All disputes arising out of or in connection with this Agreement shall be finally settled by the ordinary court of the principal place of business of the { data?.['app-name'] } affiliate being the party to this Agreement, except that Crayon may, at its own option, bring suit for collection in the country where the Partner is located.
                     </p>
                 </div>
                 <div className="wrap">
@@ -257,26 +259,14 @@ const Terms = () => {
                 <div className="social">
                     <span className="sub">SHARE</span>
                     <div>
-                        <a
-                            className='link'
-                            href="https://www.twitter.com/share?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
-                            <i className="fa-brands fa-twitter icon"/>
-                        </a>
-                        <a
-                            className='link'
-                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
+                        <a className='link' href={links?.facebook} target='_blank'>
                             <i className="fa-brands fa-facebook-f icon"/>
                         </a>
-                        <a
-                            className='link'
-                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
+                        <a className='link' href={links?.linkedin} target='_blank'>
                             <i className="fa-brands fa-linkedin-in icon"/>
+                        </a>
+                        <a className='link' href={links?.twitter} target='_blank'>
+                            <i className="fa-brands fa-twitter icon"/>
                         </a>
                     </div>
                 </div>

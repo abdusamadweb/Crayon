@@ -2,13 +2,20 @@ import './Baseline.scss'
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
                 <div className="baseline__inner">
                     <div className='width'>
                         <h4 className="title">
-                            Crayon Cloud Governance gives you access to the right people, platforms, and tools necessary to ensure your IT Estate is taken care of and optimized.
+                            { data?.['app-name'] } Cloud Governance gives you access to the right people, platforms, and tools necessary to ensure your IT Estate is taken care of and optimized.
                         </h4>
                         <h5 className="title2">
                             As an Azure Expert MSP, we can help businesses forecast their cloud spend and manage the commission and decommission of cloud consumption. Gain the ability to visualize your cloud spend and report to executives the "who, why, and how much."
@@ -16,7 +23,7 @@ const Baseline = () => {
                     </div>
                     <div>
                         <strong className='strong'>
-                            If you are wondering how Crayon Cloud Governance is beneficial in managing cloud costs, ask yourself the following questions:
+                            If you are wondering how { data?.['app-name'] } Cloud Governance is beneficial in managing cloud costs, ask yourself the following questions:
                         </strong>
                         <ul className='list'>
                             <li className="desc dot">

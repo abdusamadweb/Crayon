@@ -1,6 +1,13 @@
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
@@ -14,10 +21,10 @@ const Baseline = () => {
                     <div className="padding">
                         <h3 className="title">Strong Flexera team</h3>
                         <p className="desc">
-                            Crayon has a strong strategic relationship with Flexera and a strong background in Software and Cloud Analytics services.
+                            { data?.['app-name'] } has a strong strategic relationship with Flexera and a strong background in Software and Cloud Analytics services.
                         </p>
                         <p className="desc">
-                            Together Crayon and Flexera bring the best of Technology spend optimization, whether it is through traditional SAM, License brokering, Cloud Economics, IT lifecycle management.
+                            Together { data?.['app-name'] } and Flexera bring the best of Technology spend optimization, whether it is through traditional SAM, License brokering, Cloud Economics, IT lifecycle management.
                         </p>
                     </div>
                 </div>

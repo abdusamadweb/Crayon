@@ -36,7 +36,7 @@ const Public = () => {
             <Titles
                 sub='SOLUTIONS BY INDUSTRY'
                 title='Public Sector'
-                desc='Expertise in cybersecurity, on-premises VS cloud assessments, and cloud migration make Crayon the right choice to serve the public sector.'
+                desc={`Expertise in cybersecurity, on-premises VS cloud assessments, and cloud migration make ${ data?.['app-name'] } the right choice to serve the public sector.`}
             />
             <Bubles
                 sub='PUBLIC SECTOR'

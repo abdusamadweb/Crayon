@@ -7,14 +7,19 @@ import item4 from '../../../../assets/images/diversity/future4.png'
 
 const Talent = () => {
 
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
     const arr = [
         {
             img: item1,
-            desc: 'As a candidate, your interview panel at Crayon will have diverse representation. This is not just a goal; it is our requirement that a diverse representative be on every hiring panel.'
+            desc: `As a candidate, your interview panel at ${ data?.['app-name'] } will have diverse representation. This is not just a goal; it is our requirement that a diverse representative be on every hiring panel.`
         },
         {
             img: item2,
-            desc: 'Crayon leverages values-based interviewing to acknowledge gender differences and help to alleviate unconscious bias and impartiality as we assess candidates for cultural fit.'
+            desc: `${ data?.['app-name'] } leverages values-based interviewing to acknowledge gender differences and help to alleviate unconscious bias and impartiality as we assess candidates for cultural fit.`
         },
         {
             img: item3,
@@ -33,10 +38,10 @@ const Talent = () => {
                 <div className="talent__inner">
                     <h2 className="title">Driving an Inclusive Culture</h2>
                     <p className="desc">
-                        <b>Employee Advisory Council:</b> Represents Crayon employees through feedback and evaluation of current programs and recommendations for future initiatives to drive employee success, development, and morale.
+                        <b>Employee Advisory Council:</b> Represents { data?.['app-name'] } employees through feedback and evaluation of current programs and recommendations for future initiatives to drive employee success, development, and morale.
                     </p>
                     <p className="desc">
-                        <b>Crayon Culture Committee:</b> This committee is dedicated to promoting and honoring diversity in our workplace and seeks to leverage & encourage varying perspectives within Crayon.
+                        <b>{ data?.['app-name'] } Culture Committee:</b> This committee is dedicated to promoting and honoring diversity in our workplace and seeks to leverage & encourage varying perspectives within Crayon.
                     </p>
                 </div>
                 <div className="talent__wrapper">

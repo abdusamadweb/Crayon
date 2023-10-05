@@ -2,6 +2,13 @@ import './Baseline.scss'
 import React from 'react'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
@@ -14,7 +21,7 @@ const Baseline = () => {
                             Microsoft 365 is the market-leading communication, collaboration, and security platform utilized by millions of organizations across the world.
                         </p>
                         <p className="desc">
-                            Crayon and Microsoft will help you monitor, manage, and operate your devices and Microsoft 365 environment in a secure fashion. We help public sector take a zero trust approach and meet new cybersecurity insurance requirements.
+                            { data?.['app-name'] } and Microsoft will help you monitor, manage, and operate your devices and Microsoft 365 environment in a secure fashion. We help public sector take a zero trust approach and meet new cybersecurity insurance requirements.
                         </p>
                         <p className="desc">
                             We can help you answer the questions:
@@ -36,7 +43,7 @@ const Baseline = () => {
                             Modern Workshop Offerings:
                         </h3>
                         <p className="desc">
-                            Not sure where to start? Customers often start with a workshop. Crayon is currently offering the following workshops:
+                            Not sure where to start? Customers often start with a workshop. { data?.['app-name'] } is currently offering the following workshops:
                         </p>
                         <ul className='list2'>
                             <li className="desc dot">Endpoint Management</li>

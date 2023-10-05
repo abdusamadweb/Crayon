@@ -12,13 +12,18 @@ const Vmware = () => {
     const href = useHref()
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='veeam software-partners'>
             <BreadCrumb href={href}/>
             <Titles
                 sub='VMWARE'
                 title='Software-Defined Data Center'
-                desc1='Crayon holds several competencies with VMware to support our customers needs and offer flexibility in acquiring software, on premise and Cloud, such as VMware Managed Service Provider, VMware Aggregator and VMware Solution Provider.'
+                desc1={`${ data?.['app-name'] } holds several competencies with VMware to support our customers needs and offer flexibility in acquiring software, on premise and Cloud, such as VMware Managed Service Provider, VMware Aggregator and VMware Solution Provider.`}
                 desc2='VMware, a leading innovator in enterprise software, powers the world’s digital infrastructure. Their solutions form a flexible, consistent digital foundation that
                 enables technology-driven transformation without disruption.'
             />

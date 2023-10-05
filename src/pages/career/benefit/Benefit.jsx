@@ -3,6 +3,13 @@ import React from 'react'
 import img from '../../../assets/images/career-benefit-img.jfif'
 
 const Benefit = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='benefit'>
             <div className="container">
@@ -11,7 +18,7 @@ const Benefit = () => {
                     <div>
                         <h3 className="benefit__title">Benefits</h3>
                         <p className="benefit__desc">
-                            Crayon offers competitive benefits for all full-time employees. Some of our notable benefits include:
+                            { data?.['app-name'] } offers competitive benefits for all full-time employees. Some of our notable benefits include:
                         </p>
                         <ul className="benefit__list">
                             <li className='item'>Flex time off</li>

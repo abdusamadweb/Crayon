@@ -12,15 +12,20 @@ const Ibm = () => {
     const href = useHref()
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='ibm software-partners'>
             <BreadCrumb href={href}/>
             <Titles
                 sub='IBM'
                 title='Experts in IBM license and contract optimization'
-                desc1='Crayon is a global IBM Platinum Business Partner authorized to help customers with their IBM software in more than 30 countries across the world.'
-                desc2='Crayon is also certified across the IBM software stack, allowing customers to use Crayon as a one-stop-shop.
-                Crayon are experts at helping clients remain compliant towards IBM, while having the optimized commercial agreement with minimized cost attached to it.'
+                desc1={`${ data?.['app-name'] } is a global IBM Platinum Business Partner authorized to help customers with their IBM software in more than 30 countries across the world.`}
+                desc2={`${ data?.['app-name'] } is also certified across the IBM software stack, allowing customers to use { data?.['app-name'] } as a one-stop-shop.
+                    ${ data?.['app-name'] } are experts at helping clients remain compliant towards IBM, while having the optimized commercial agreement with minimized cost attached to it.`}
             />
             <img className='microsoft__img container d-block' src={img1} alt="img"/>
             <Baseline />

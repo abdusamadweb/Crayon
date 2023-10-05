@@ -3,6 +3,13 @@ import React from 'react'
 import {defaultImg} from "../../../../assets/scripts/global";
 
 const Baseline = ({ img }) => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
@@ -24,19 +31,19 @@ const Baseline = ({ img }) => {
                     <div>
                         <h3 className="title">Deliverables</h3>
                         <p className="desc">
-                            <span>Entitlements –</span> Crayon will analyze license reports and help the organization understand what software your organization is entitled to deploy
+                            <span>Entitlements –</span> { data?.['app-name'] } will analyze license reports and help the organization understand what software your organization is entitled to deploy
                         </p>
                         <p className="desc">
-                            <span>Deployments –</span> Crayon will perform a review of installed products to give you visibility around how licenses are deployed across the entire organization
+                            <span>Deployments –</span> { data?.['app-name'] } will perform a review of installed products to give you visibility around how licenses are deployed across the entire organization
                         </p>
                         <p className="desc">
-                            <span>Reporting –</span> Crayon will develop an Effective License Position (ELP) comparing entitlements and deployments, uncovering opportunities for improvement Gap
+                            <span>Reporting –</span> { data?.['app-name'] } will develop an Effective License Position (ELP) comparing entitlements and deployments, uncovering opportunities for improvement Gap
                         </p>
                         <p className="desc">
-                            <span>Analysis –</span> Crayon will analyze current organizational practices relative to the organization’s desired future software and cloud state, surfacing gaps between the two
+                            <span>Analysis –</span> { data?.['app-name'] } will analyze current organizational practices relative to the organization’s desired future software and cloud state, surfacing gaps between the two
                         </p>
                         <p className="desc">
-                            <span>Risk Assessment –</span> Crayon will demonstrate risks to the organization in order to assist in reducing the software footprint through rationalization and consolidation, lowering the risk and cost of software license audits, identifying security and cyber threats, upholding reputation, anticipating future needs, and improving overall business performance
+                            <span>Risk Assessment –</span> { data?.['app-name'] } will demonstrate risks to the organization in order to assist in reducing the software footprint through rationalization and consolidation, lowering the risk and cost of software license audits, identifying security and cyber threats, upholding reputation, anticipating future needs, and improving overall business performance
                         </p>
                     </div>
                 </div>

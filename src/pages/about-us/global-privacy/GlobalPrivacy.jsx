@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb";
+import $api from "../../../api";
 
 const GlobalPrivacy = () => {
 
     const href = useHref()
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
+    const [links, setLinks] = useState([])
+    useEffect(() => {
+        $api
+            .get('/social-links')
+            .then(res => setLinks(res.data[0]))
+    }, [])
 
 
     return (
@@ -13,26 +27,14 @@ const GlobalPrivacy = () => {
             <div className="social absolute">
                 <span className="sub">SHARE</span>
                 <div>
-                    <a
-                        className='link'
-                        href="https://www.twitter.com/share?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
-                        <i className="fa-brands fa-twitter icon"/>
-                    </a>
-                    <a
-                        className='link'
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
+                    <a className='link' href={links?.facebook} target='_blank'>
                         <i className="fa-brands fa-facebook-f icon"/>
                     </a>
-                    <a
-                        className='link'
-                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                        target='_blank'
-                    >
+                    <a className='link' href={links?.linkedin} target='_blank'>
                         <i className="fa-brands fa-linkedin-in icon"/>
+                    </a>
+                    <a className='link' href={links?.twitter} target='_blank'>
+                        <i className="fa-brands fa-twitter icon"/>
                     </a>
                 </div>
             </div>
@@ -44,7 +46,7 @@ const GlobalPrivacy = () => {
                 <div className="wrap">
                     <h4 className="title2">Introduction</h4>
                     <p className="desc">
-                        This Privacy Notice applies to Crayon Group, in the following referred to (collectively, “Crayon Group AS,” “we” and “us”). We are global software and cloud experts. We help you gain clarity from complexity, optimise the ROI from your technology investments and simplify and secure your journey to digital transformation. This privacy notice aims to inform you about how we collect, store, use and disclose information about you when you:
+                        This Privacy Notice applies to { data?.['app-name'] } Group, in the following referred to (collectively, “{ data?.['app-name'] } Group AS,” “we” and “us”). We are global software and cloud experts. We help you gain clarity from complexity, optimise the ROI from your technology investments and simplify and secure your journey to digital transformation. This privacy notice aims to inform you about how we collect, store, use and disclose information about you when you:
                     </p>
                     <ul className="list numeric">
                         <li className="desc">
@@ -57,12 +59,12 @@ const GlobalPrivacy = () => {
                     </ul>
                 </div>
                 <div className="wrap">
-                    <h4 className="title2">1. What are the contact details of Crayon Group?</h4>
+                    <h4 className="title2">1. What are the contact details of { data?.['app-name'] } Group?</h4>
                     <p className="desc">
-                        Crayon Group AS is the Controller for the Personal Data we process, unless otherwise stated.
+                        { data?.['app-name'] } Group AS is the Controller for the Personal Data we process, unless otherwise stated.
                     </p>
                     <div>
-                        <span className="sub">CRAYON GROUP AS</span>
+                        <span className="sub">{ data?.['app-name'] } GROUP AS</span>
                         <div className="d-flex between g2">
                             <span className="desc">Postal Address:</span>
                             <span className="desc">Sandakerveien 114a, 0484 Oslo, Norway</span>
@@ -108,7 +110,7 @@ const GlobalPrivacy = () => {
                     </div>
                 </div>
                 <div className="wrap">
-                    <h4 className="title2">2. What information does Crayon Group collect? </h4>
+                    <h4 className="title2">2. What information does { data?.['app-name'] } Group collect? </h4>
                     <p className="desc">
                         Most of the Personal Data we process is provided to us for one of the following reasons:
                     </p>
@@ -126,7 +128,7 @@ const GlobalPrivacy = () => {
                     </div>
                 </div>
                 <div className="wrap">
-                    <h4 className="title2">3. How does Crayon Group use the information? </h4>
+                    <h4 className="title2">3. How does { data?.['app-name'] } Group use the information? </h4>
                     <div>
                         <span className="sub">WEBSITES OR EVENTS:</span>
                         <p className="desc">
@@ -178,14 +180,14 @@ const GlobalPrivacy = () => {
                     </div>
                 </div>
                 <div className="wrap">
-                    <h4 className="title2">4. How does Crayon Group share and disclose information? </h4>
+                    <h4 className="title2">4. How does { data?.['app-name'] } Group share and disclose information? </h4>
                     <p className="desc">
                         The confidentiality and integrity of data stored on our IT systems are protected by controls to ensure only authorized employees have access to those capabilities required for their duties. All employees have signed a confidentiality and privacy agreement.
                     </p>
                     <div>
-                        <span className="sub">CRAYON GROUP COMPANIES:</span>
+                        <span className="sub">{ data?.['app-name'] } GROUP COMPANIES:</span>
                         <p className="desc">
-                            We may distribute your Personal Data to any member of Crayon Group, i.e. any of our subsidiaries, if it is necessary and reasonable for the purposes set out in this Privacy Notice. We have Binding Corporate Rules in place to ensure all the same consistent level of protection.
+                            We may distribute your Personal Data to any member of { data?.['app-name'] } Group, i.e. any of our subsidiaries, if it is necessary and reasonable for the purposes set out in this Privacy Notice. We have Binding Corporate Rules in place to ensure all the same consistent level of protection.
                         </p>
                     </div>
                     <div>
@@ -202,14 +204,14 @@ const GlobalPrivacy = () => {
                     </div>
                 </div>
                 <div className="wrap">
-                    <h4 className="title2">5. How does Crayon Group secure your personal data? </h4>
+                    <h4 className="title2">5. How does { data?.['app-name'] } Group secure your personal data? </h4>
                     <p className="desc">
-                        Crayon protects your Personal Data and has internal Information Security rules, processes and controls in place to protect your Personal Data. Our Information Security is based on a thorough evaluation of the risks involved taking into consideration the categories of Personal Data and the types of Data Processing in question.
+                        { data?.['app-name'] } protects your Personal Data and has internal Information Security rules, processes and controls in place to protect your Personal Data. Our Information Security is based on a thorough evaluation of the risks involved taking into consideration the categories of Personal Data and the types of Data Processing in question.
                     </p>
                     <div>
                         <span className="sub">LOCATION OF YOUR PERSONAL DATA:</span>
                         <p className="desc">
-                            Crayon Group operates in over 20 countries within and outside the European Union (EU) and European Economic Area (EEA). As a result, your personal data may be subject to international transfers.
+                            { data?.['app-name'] } Group operates in over 20 countries within and outside the European Union (EU) and European Economic Area (EEA). As a result, your personal data may be subject to international transfers.
                         </p>
                         <p className="desc">
                             Despite the limitations of the geographical scope of the General Data Protection Regulation (GDPR), we apply the same standards and principles governing data protection to every employee, contractor, consultant and agency staff employee working for any of our subsidiaries worldwide.
@@ -224,7 +226,7 @@ const GlobalPrivacy = () => {
                             The confidentiality and integrity of data stored on our IT systems are protected by controls to ensure only authorized employees have access to those capabilities required for their duties. All employees have signed a confidentiality agreement.
                         </p>
                         <p className="desc">
-                            We may distribute your Personal Data to any member of Crayon Group, i.e. any of our subsidiaries, if it is necessary and reasonable for the purposes set out in this Privacy Notice. We have Binding Corporate Rules in place to ensure all the same consistent level of protection. To request a copy of our corporate binding rules, please contact our DPO on the Contact Details listed here.
+                            We may distribute your Personal Data to any member of { data?.['app-name'] } Group, i.e. any of our subsidiaries, if it is necessary and reasonable for the purposes set out in this Privacy Notice. We have Binding Corporate Rules in place to ensure all the same consistent level of protection. To request a copy of our corporate binding rules, please contact our DPO on the Contact Details listed here.
                         </p>
                         <p className="desc">
                             We do not disclose your personal data to any third parties, public or private without your prior consent, unless we are obligated to by EU or national law, or it is necessary to protect the vital interests of you or any other natural person that we process personal data concerning.
@@ -233,7 +235,7 @@ const GlobalPrivacy = () => {
                     <div>
                         <span className="sub">PROTECTION OF OUR PERSONAL DATA:</span>
                         <p className="desc">
-                            Crayon protects your Personal Data and has internal Information Security rules, process and controls in place to protect your Personal Data. Our Information Security is based on a thorough evaluation of the risks involved taking into consideration the categories of Personal Data and the types of Data Processing in question.
+                            { data?.['app-name'] } protects your Personal Data and has internal Information Security rules, process and controls in place to protect your Personal Data. Our Information Security is based on a thorough evaluation of the risks involved taking into consideration the categories of Personal Data and the types of Data Processing in question.
                         </p>
                         <p className="desc">
                             We have put in place technical and organizational security measures to ensure that protect your Personal Data against unauthorized or unlawful processing and against accidental loss, destruction or damage.
@@ -315,26 +317,14 @@ const GlobalPrivacy = () => {
                 <div className="social">
                     <span className="sub">SHARE</span>
                     <div>
-                        <a
-                            className='link'
-                            href="https://www.twitter.com/share?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
-                            <i className="fa-brands fa-twitter icon"/>
-                        </a>
-                        <a
-                            className='link'
-                            href="https://www.facebook.com/sharer/sharer.php?u=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
+                        <a className='link' href={links?.facebook} target='_blank'>
                             <i className="fa-brands fa-facebook-f icon"/>
                         </a>
-                        <a
-                            className='link'
-                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.crayon.com/us/about-us/terms-and-conditions/"
-                            target='_blank'
-                        >
+                        <a className='link' href={links?.linkedin} target='_blank'>
                             <i className="fa-brands fa-linkedin-in icon"/>
+                        </a>
+                        <a className='link' href={links?.twitter} target='_blank'>
+                            <i className="fa-brands fa-twitter icon"/>
                         </a>
                     </div>
                 </div>

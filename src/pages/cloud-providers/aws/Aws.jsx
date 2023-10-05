@@ -16,13 +16,18 @@ const Aws = () => {
     const href = useHref()
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='aws cloud-providers'>
             <BreadCrumb href={href} />
             <Titles
                 sub='AWS'
                 title='Global Advanced Consulting Partner for AWS'
-                desc1='With over 150 AWS certifications, Crayon delivers world-class Migration Services for AWS. But migration is just part of our story.'
+                desc1={`With over 150 AWS certifications, ${ data?.['app-name'] } delivers world-class Migration Services for AWS. But migration is just part of our story.`}
                 desc2='With deep skills in Software Assessment and TCO, we help you assess your infrastructure, software and applications, select workloads and phasing, architect a complete solution, define and land your estate on AWS.'
             />
             <img className='microsoft__img container small' src={awsImg} alt="img"/>

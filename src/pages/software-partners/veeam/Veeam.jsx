@@ -12,13 +12,18 @@ const Veeam = () => {
     const href = useHref()
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='veeam software-partners'>
             <BreadCrumb href={href}/>
             <Titles
                 sub='VEEAM'
                 title='Back up for cloud, virtual and physical'
-                desc1='Crayon offer license agreements for Veeam backup solutions- a simple, flexible and reliable backup product for your datacentre and cloud through one platform.'
+                desc1={`${ data?.['app-name'] } offer license agreements for Veeam backup solutions- a simple, flexible and reliable backup product for your datacentre and cloud through one platform.`}
                 desc2='Veeam solution is a fit for companies of any size, private or public sector.'
             />
             <img className='microsoft__img container d-block' src={img1} alt="img"/>

@@ -2,6 +2,13 @@ import React from 'react'
 import img from '../../../assets/images/software-partners/ibm-img3.png'
 
 const Baseline = () => {
+
+
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='baseline'>
             <div className="container small">
@@ -17,10 +24,10 @@ const Baseline = () => {
                             It is a continuous job being updated on the license metrics, contract structures and compliance policies.
                         </p>
                         <p className="desc">
-                            With Crayon as your advisor, you can rest assured that you are up to date on any changes affecting your IBM agreement, and/or potential optimizations for increased flexibility or reduced cost.
+                            With { data?.['app-name'] } as your advisor, you can rest assured that you are up to date on any changes affecting your IBM agreement, and/or potential optimizations for increased flexibility or reduced cost.
                         </p>
                         <p className="desc">
-                            Crayon believe that having the optimized IBM agreement is achieved through paying for licenses that you consume (no more and no less), and further having the optimized commercial structure for this license portfolio.
+                            { data?.['app-name'] } believe that having the optimized IBM agreement is achieved through paying for licenses that you consume (no more and no less), and further having the optimized commercial structure for this license portfolio.
                         </p>
                         <div className='sam'>
                             <h5 className='sam__title double-dot'>
@@ -31,7 +38,7 @@ const Baseline = () => {
                     </div>
                     <div className="padding">
                         <h3 className="title">
-                            Crayon can assist with the following services on IBM:
+                            { data?.['app-name'] } can assist with the following services on IBM:
                         </h3>
                         <div>
                             <h4 className="title2">Licensing: </h4>

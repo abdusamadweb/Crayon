@@ -10,6 +10,11 @@ const Subscribe = () => {
     const href = useHref()
 
 
+    // page title
+    const storedData = localStorage.getItem('globalData')
+    const data = JSON.parse(storedData)
+
+
     return (
         <div className='subs resources'>
             <BreadCrumb href={href} />
@@ -38,7 +43,7 @@ const Subscribe = () => {
                 </div>
                 <div className="subs__quote">
                     <h3 className="title double-dot">
-                        "Crayon's ability to share knowledge 'from the trenches' made this an incredible opportunity for my company. I don't think you will ever fully understand how profoundly this has changed our overall success."
+                        "{ data?.['app-name'] }'s ability to share knowledge 'from the trenches' made this an incredible opportunity for my company. I don't think you will ever fully understand how profoundly this has changed our overall success."
                     </h3>
                     <span className='txt'><span>// </span> Ben Allen, CIO of Probi</span>
                 </div>
