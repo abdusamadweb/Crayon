@@ -36,7 +36,7 @@ const Healthcare = () => {
             <Titles
                 sub='SOLUTIONS BY INDUSTRY'
                 title='Healthcare'
-                desc='Expertise in cloud migration, modern work, and Data & AI services and solutions.'
+                desc='Proficiency with data and AI services and solutions, modern work, and cloud migration.'
             />
             <Bubles
                 sub='HEALTHCARE'

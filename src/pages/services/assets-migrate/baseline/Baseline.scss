@@ -7,7 +7,9 @@
 
     &__img {
       width: 100%;
+      min-height: 200px;
       margin-bottom: 4rem;
+      object-fit: cover;
     }
 
     &__inner {

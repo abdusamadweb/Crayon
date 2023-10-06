@@ -43,7 +43,7 @@ const Offices = () => {
                 <div className="offices__titles">
                     <span className="txt sub">OUR OFFICES</span>
                     <h4 className="title dotted">
-                        Find your closest { data?.['app-name'] } office
+                        Locate the nearest { data?.['app-name'] } office.
                     </h4>
                 </div>
                 <div className='offices__office row between align-center'>

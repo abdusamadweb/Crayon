@@ -15,8 +15,8 @@ const Operate = () => {
     const [result, setResult] = useState([])
     useEffect(() => {
         $api
-            .get('/operate-support')
-            .then(res => setResult(res.data[0]))
+            .get(`/services/47`)
+            .then(res => setResult(res.data))
     }, [href])
 
 

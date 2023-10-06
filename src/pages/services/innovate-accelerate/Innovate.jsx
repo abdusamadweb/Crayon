@@ -36,8 +36,8 @@ const Innovate = () => {
     const [result, setResult] = useState([])
     useEffect(() => {
         $api
-            .get('/innovate-accelerate')
-            .then(res => setResult(res.data[0]))
+            .get(`/services/48`)
+            .then(res => setResult(res.data))
     }, [href])
 
 
@@ -50,7 +50,7 @@ const Innovate = () => {
             />
             <Bubles
                 sub='AI SOLUTIONS SERVICES'
-                title='Gain competitive edge with innovative data-driven solutions'
+                title={result?.title2 || 'Bubles'}
                 data={data}
             />
             <Baseline />

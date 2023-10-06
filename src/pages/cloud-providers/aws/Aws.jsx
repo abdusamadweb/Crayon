@@ -26,9 +26,9 @@ const Aws = () => {
             <BreadCrumb href={href} />
             <Titles
                 sub='AWS'
-                title='Global Advanced Consulting Partner for AWS'
-                desc1={`With over 150 AWS certifications, ${ data?.['app-name'] } delivers world-class Migration Services for AWS. But migration is just part of our story.`}
-                desc2='With deep skills in Software Assessment and TCO, we help you assess your infrastructure, software and applications, select workloads and phasing, architect a complete solution, define and land your estate on AWS.'
+                title="AWS's International Advanced Consulting Partner"
+                desc1={`${ data?.['app-name'] } offers top-notch Migration Services for AWS and boasts more than 150 AWS certifications. However, migration is only one aspect of our tale.`}
+                desc2='We assist you in evaluating your infrastructure, software, and applications, choosing workloads and phasing, architecting a comprehensive solution, and defining and securing your estate on AWS thanks to our strong expertise in software assessment and TCO.'
             />
             <img className='microsoft__img container small' src={awsImg} alt="img"/>
             <Baseline />

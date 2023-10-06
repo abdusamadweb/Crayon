@@ -25,9 +25,9 @@ const Microsoft = () => {
             <BreadCrumb href={href} />
             <Titles
                 sub='MICROSOFT'
-                title='A Proud Top 10 Global Microsoft Partner'
-                desc1={`If you need a partner with the highest expertise on Microsoft technology, and understand if you are buying the right solutions at the right price, choose ${ data?.['app-name'] }.`}
-                desc2='With over 350 Microsoft Certified Professionals, we have Gold Partner status and have been named Partner of the Year in 2019 for Artificial Intelligence and Machine learning.'
+                title='A Top 10 Global Microsoft Partner with Pride'
+                desc1={`Choose ${ data?.['app-name'] } if you require a partner with the greatest level of knowledge in Microsoft technology and want to know if you are purchasing the appropriate solutions at the appropriate cost.`}
+                desc2='We hold Gold Partner accreditation, have over 350 Microsoft Certified Professionals, and were recognized as the AI and ML Partner of the Year in 2019.'
                 strong='Partner of the Year'
                 list={arr}
             />

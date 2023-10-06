@@ -23,9 +23,9 @@ const Google = () => {
             <BreadCrumb href={href} />
             <Titles
                 sub='MICROSOFT'
-                title='A Proud Top 10 Global Microsoft Partner'
-                desc1={`If you need a partner with the highest expertise on Microsoft technology, and understand if you are buying the right solutions at the right price, choose ${ data?.['app-name'] }.`}
-                desc2='With over 350 Microsoft Certified Professionals, we have Gold Partner status and have been named Partner of the Year in 2019 for Artificial Intelligence and Machine learning.'
+                title='More than just a search engine'
+                desc1={`${ data?.['app-name'] } has Premier Status, with 50+ certifications, and is a Global Google Partner.`}
+                desc2='We are here to help you succeed based on your business needs, from beginning your cloud journey to innovating with data, artificial intelligence (AI), and machine learning (ML).'
             />
             <img className='microsoft__img container' src={googleImg} alt="img"/>
             <Baseline />

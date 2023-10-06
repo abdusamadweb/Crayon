@@ -36,8 +36,8 @@ const Assets = () => {
     const [result, setResult] = useState([])
     useEffect(() => {
         $api
-            .get('/assess-migrate')
-            .then(res => setResult(res.data[0]))
+            .get(`/services/45`)
+            .then(res => setResult(res.data))
     }, [href])
 
 
@@ -55,7 +55,7 @@ const Assets = () => {
             />
             <Bubles
                 sub='MICROSOFT BASELINE ENGAGEMENT'
-                title='Begin Your Software Compliance Journey'
+                title={result?.title2 || 'Bubles'}
                 data={data}
             />
             <Baseline img={result?.image?.full_url} />

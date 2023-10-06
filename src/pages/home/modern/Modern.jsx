@@ -28,7 +28,7 @@ const Modern = () => {
                     <span className='txt'>MODERN WORK ASSESSMENTS - FUNDING AVAILABLE</span>
                     <h4 className="title">Modern Work</h4>
                     <p className="desc">
-                        Balance employee productivity, company security, and employee experience.
+                        Balance employee productivity, enterprise security and employee experience.
                     </p>
                 </div>
                 {/*<Link className='link' to=''>Learn more</Link>*/}
@@ -37,7 +37,7 @@ const Modern = () => {
                 <div className='row flex-column between'>
                     <div>
                         <span className='txt'>MODERN WORK ASSESSMENTS - FUNDING AVAILABLE</span>
-                        <h4 className="title">{ data?.['app-name'] } Named a Leader by Gartner for the 2nd Consecutive Year</h4>
+                        <h4 className="title">{ data?.['app-name'] } named a leader by Gartner for second consecutive year</h4>
                         <p className="desc">
                             2021 Gartner Magic Quadrant for Software Asset Management Managed Services
                         </p>

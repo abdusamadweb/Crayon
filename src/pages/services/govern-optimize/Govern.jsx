@@ -36,8 +36,8 @@ const Govern = () => {
     const [result, setResult] = useState([])
     useEffect(() => {
         $api
-            .get('/govern-optimize')
-            .then(res => setResult(res.data[0]))
+            .get(`/services/46`)
+            .then(res => setResult(res.data))
     }, [href])
 
 
@@ -55,7 +55,7 @@ const Govern = () => {
             />
             <Bubles
                 sub='CLOUD GOVERNANCE'
-                title='Control, optimize, and forecast your cloud spend with three levels of governance designed to fit your needs.'
+                title={result?.title2 || 'Bubles'}
                 data={data}
             />
             <Baseline />

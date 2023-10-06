@@ -1,9 +1,20 @@
 import './What.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import navList from "../../../assets/scripts/navList";
+import $api from "../../../api";
 
 const What = () => {
+
+
+    const [result, setResult] = useState([])
+    useEffect(() => {
+        $api
+            .get('/services')
+            .then(res => setResult(res.data))
+    }, [])
+
+
     return (
         <div className='what'>
             <div className="container">
@@ -12,11 +23,11 @@ const What = () => {
                     <div className="what__wrapper">
                         <ul className='list'>
                             {
-                                navList[0].list.map(i => (
+                                result?.map(i => (
                                     <li className='item'>
-                                        <span className='item__txt'>{ i.title }</span>
-                                        <h5 className="item__title">{ i.desc }</h5>
-                                        <Link className='item__link' to={'/services' + i.link}>Read more</Link>
+                                        <span className='item__txt'>{ i.subtitle }</span>
+                                        <h5 className="item__title">{ i.title }</h5>
+                                        <Link className='item__link' to={'/services/' + i.link}>Read more</Link>
                                     </li>
                                 ))
                             }

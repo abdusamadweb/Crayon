@@ -32,7 +32,7 @@ const News = () => {
                     <div className="news__titles">
                         <span className='txt'>NEWS</span>
                         <h1 className="title">
-                            Stay updated on our latest news and articles
+                            Find out about our latest news and articles
                         </h1>
                         <Link className='btn' to='/resources/blogs'>View all articles</Link>
                     </div>
