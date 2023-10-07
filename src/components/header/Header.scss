@@ -62,12 +62,12 @@
   }
 
   &__logo {
-    width: 150px;
-    height: 40px;
+    width: 170px;
+    height: 55px;
 
     @include phone {
-      width: 120px;
-      height: 30px;
+      width: 140px;
+      height: 45px;
     }
 
     .img {

@@ -16,20 +16,13 @@ const Modern = () => {
     }, [])
 
 
-    // page title
-    const storedData = localStorage.getItem('globalData')
-    const data = JSON.parse(storedData)
-
-
     return (
         <div className='modern'>
             <div className="modern__inner row flex-column between">
                 <div>
                     <span className='txt'>MODERN WORK ASSESSMENTS - FUNDING AVAILABLE</span>
-                    <h4 className="title">Modern Work</h4>
-                    <p className="desc">
-                        Balance employee productivity, enterprise security and employee experience.
-                    </p>
+                    <h4 className="title">{ result?.modernTitle1 || 'Title' }</h4>
+                    <p className="desc">{ result?.modernDesc1 || '...' }</p>
                 </div>
                 {/*<Link className='link' to=''>Learn more</Link>*/}
             </div>
@@ -37,10 +30,8 @@ const Modern = () => {
                 <div className='row flex-column between'>
                     <div>
                         <span className='txt'>MODERN WORK ASSESSMENTS - FUNDING AVAILABLE</span>
-                        <h4 className="title">{ data?.['app-name'] } named a leader by Gartner for second consecutive year</h4>
-                        <p className="desc">
-                            2021 Gartner Magic Quadrant for Software Asset Management Managed Services
-                        </p>
+                        <h4 className="title">{ result?.modernTitle2 || 'Title' }</h4>
+                        <p className="desc">{ result?.modernDesc2 || '...' }</p>
                     </div>
                     {/*<Link className='link' to=''>Learn more</Link>*/}
                 </div>
