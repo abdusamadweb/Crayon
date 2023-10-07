@@ -1,6 +1,6 @@
 import './Ceo.scss'
 import React from 'react'
-import vd from '../../../../assets/images/diversity/diversity-video.mp4'
+import vd from '../../../../assets/images/diversity/vd.webp'
 
 const Ceo = () => {
 
@@ -23,13 +23,7 @@ const Ceo = () => {
                             At { data?.['app-name'] }, diversity and inclusion are fundamental tenets of our culture. This pledge reinforces our mission to ensure that every voice is heard and every person is seen. We aim to cultivate an environment where each unique perspective contributes to our collective vision, propelling us toward an even more inclusive future.
                         </p>
                     </div>
-                    <video
-                        className='img vd'
-                        loop={true}
-                        controls={true}
-                    >
-                        <source src={vd} type="video/mp4"/>
-                    </video>
+                    <img className='img vd' src={vd} alt='img'/>
                 </div>
             </div>
         </div>

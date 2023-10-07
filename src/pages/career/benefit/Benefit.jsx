@@ -27,7 +27,6 @@ const Benefit = () => {
                             <li className='item'>Lifestyle spending account</li>
                             <li className='item'>Presidents Club vacation for top-performing employees</li>
                         </ul>
-                        <a className='btn' href="https://www.linkedin.com/jobs/search/?f_C=46899%2C2812437%2C333814%2C11842925%2C3218464%2C2217184%2C94650&geoId=92000000&location=Worldwide" target='_blank'>Open Positions</a>
                     </div>
                 </div>
             </div>

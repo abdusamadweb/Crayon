@@ -1,6 +1,7 @@
 import './Hero.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import heroImg from '../../../assets/images/career-hero-img.jpg'
+import $api from "../../../api";
 
 const Hero = () => {
 
@@ -8,6 +9,14 @@ const Hero = () => {
     // page title
     const storedData = localStorage.getItem('globalData')
     const data = JSON.parse(storedData)
+
+
+    const [links, setLinks] = useState([])
+    useEffect(() => {
+        $api
+            .get('/social-links')
+            .then(res => setLinks(res.data[0]))
+    }, [])
 
 
     return (
@@ -25,7 +34,7 @@ const Hero = () => {
                         <p className='desc'>
                             A career at { data?.['app-name'] } not only gives you the tools to tackle tomorrow’s technology – it connects you to a unique community.
                         </p>
-                        <a className='btn' href="https://www.linkedin.com/jobs/search/?f_C=46899%2C2812437%2C333814%2C11842925%2C3218464%2C2217184%2C94650&geoId=92000000&location=Worldwide" target='_blank'>
+                        <a className='btn' href={links?.linkedin} target='_blank'>
                             Open positions
                         </a>
                     </div>
