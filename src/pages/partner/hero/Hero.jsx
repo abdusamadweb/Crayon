@@ -1,7 +1,7 @@
 import './Hero.scss'
 import React from 'react'
 
-const Hero = () => {
+const Hero = ({ content }) => {
 
 
     // page title
@@ -15,15 +15,11 @@ const Hero = () => {
                 <div className="hero__inner">
                     <div className="hero__titles">
                         <span className="sub">{ data?.['app-name'] } CHANNEL BUSINESS</span>
-                        <h1 className="title">The IT Partners' Partner</h1>
+                        <h1 className="title">{ content?.partner_title?.text || '...' }</h1>
                     </div>
                     <div className="hero__descs">
-                        <p className="desc">
-                            For hosters, MSPs, ISVs, system integrators or Dynamics partners; our channel business is a { data?.['app-name'] } entity that helps IT providers get the most profitable CSP and SPLA business.
-                        </p>
-                        <p className="desc">
-                            Get a dedicated account manager, best-in-class technical support, a top-ranking software and cloud procurement platform and guidance on how to maximize your vendor incentive programs by partnering with us.
-                        </p>
+                        <p className="desc">{ content?.partner_desc1?.text || '...' }</p>
+                        <p className="desc">{ content?.partner_desc2?.text || '...' }</p>
                         <a className='btn' href="#contact">TALK TO AN EXPERT</a>
                     </div>
                 </div>

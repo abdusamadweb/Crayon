@@ -1,7 +1,7 @@
 import './Baseline.scss'
 import React from 'react'
 
-const Baseline = () => {
+const Baseline = ({ content }) => {
 
 
     // page title
@@ -14,30 +14,22 @@ const Baseline = () => {
             <div className="container small">
                 <div className="baseline__inner">
                     <div>
-                        <h3 className="title">
-                            { data?.['app-name'] } is Your Full-Service Google Consultant
-                        </h3>
+                        <h3 className="title">{ content?.google_baseline_title1?.text || '...' }</h3>
                         <div>
                             <h4 className="title2">Cloud Migrations</h4>
-                            <p className="desc">
-                                We specialize in Google Cloud Migrations. Not ready for a full-migration? No problem. We offer services to assess your current on-premises and hybrid cloud estate and make recommendations based on your business goals.
-                            </p>
+                            <p className="desc">{ content?.google_baseline_desc1?.text || '...' }</p>
                         </div>
                         <div>
                             <h4 className="title2">Innovation</h4>
-                            <p className="desc">
-                                Some of our customers are ready for innovation. We can help with that too. { data?.['app-name'] } champions Data Centers of Excellence with Data & AI/ML managed services. Find out where you are in your data journey with our free Data Assessment below with instant results, no strings attached.
-                            </p>
+                            <p className="desc">{ content?.google_baseline_desc1?.text || '...' }</p>
                         </div>
                         <div>
                             <h4 className="title2">Cloud Migrations</h4>
-                            <p className="desc">
-                                The Google Cloud platform is growing rapidly and we are here for it. By using Google and { data?.['app-name'] } technology and experience in extracting value from data to build infrastructure on an unprecedented scale – we aim to democratize IT Cost Optimization and lead companies to innovation through Data, Artificial Intelligence and Machine learning.
-                            </p>
+                            <p className="desc">{ content?.google_baseline_desc1?.text || '...' }</p>
                         </div>
                     </div>
                     <div className="padding">
-                        <h3 className="title">Google Cloud Areas of Expertise</h3>
+                        <h3 className="title">{ content?.google_baseline_title2?.text || '...' }</h3>
                         <div className='row'>
                             <div>
                                 <h4 className="title2">Infrastructure Modernization</h4>

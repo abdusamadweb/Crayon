@@ -1,12 +1,12 @@
 import './Baseline.scss'
 import React from 'react'
+import {HtmlWithLineBreaks} from "../../../cloud-providers/microsoft/baseline/Baseline";
 
-const Baseline = () => {
+const Baseline = ({ content }) => {
 
 
-    // page title
-    const storedData = localStorage.getItem('globalData')
-    const data = JSON.parse(storedData)
+    const list1 = content?.sector_baseline_items1?.text?.split("\n")?.filter(line => line.trim() !== "")
+    const list2 = content?.sector_baseline_items2?.text?.split("\n")?.filter(line => line.trim() !== "")
 
 
     return (
@@ -14,42 +14,25 @@ const Baseline = () => {
             <div className="container small">
                 <div className="baseline__inner">
                     <div className="width">
-                        <h3 className="title">
-                            Streamline and strengthen your Security and Compliance
-                        </h3>
-                        <p className="desc">
-                            Microsoft 365 is the market-leading communication, collaboration, and security platform utilized by millions of organizations across the world.
-                        </p>
-                        <p className="desc">
-                            { data?.['app-name'] } and Microsoft will help you monitor, manage, and operate your devices and Microsoft 365 environment in a secure fashion. We help public sector take a zero trust approach and meet new cybersecurity insurance requirements.
-                        </p>
-                        <p className="desc">
-                            We can help you answer the questions:
-                        </p>
+                        <h3 className="title">{ content?.sector_baseline_title1?.text || '...' }</h3>
+                        <HtmlWithLineBreaks text={ content?.sector_baseline_desc1?.text || '...' } />
                         <ul className="list">
-                            <li className="desc dot">
-                                Is my information secure and protected from all types of threats?
-                            </li>
-                            <li className="desc dot">
-                                Can I be saving with any of my Microsoft 365 tools?
-                            </li>
-                            <li className="desc dot">
-                                What is Endpoint Management and how do I get started?
-                            </li>
+                            {
+                                list1?.map(i => (
+                                    <li className="desc dot" key={i}>{ i }</li>
+                                ))
+                            }
                         </ul>
                     </div>
                     <div>
-                        <h3 className="title">
-                            Modern Workshop Offerings:
-                        </h3>
-                        <p className="desc">
-                            Not sure where to start? Customers often start with a workshop. { data?.['app-name'] } is currently offering the following workshops:
-                        </p>
+                        <h3 className="title">{ content?.sector_baseline_title2?.text || '...' }</h3>
+                        <HtmlWithLineBreaks text={ content?.sector_baseline_desc2?.text || '...' } />
                         <ul className='list2'>
-                            <li className="desc dot">Endpoint Management</li>
-                            <li className="desc dot">Modernized Communication</li>
-                            <li className="desc dot">Hybrid Meetings</li>
-                            <li className="desc dot">Employee Experience</li>
+                            {
+                                list2?.map(i => (
+                                    <li className="desc dot" key={i}>{ i }</li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

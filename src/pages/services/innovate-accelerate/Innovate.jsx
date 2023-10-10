@@ -11,6 +11,7 @@ import img3 from "../../../assets/images/services/increase.png";
 import reportImg from "../../../assets/images/services/innovate-report.jpg";
 import Baseline from "./baseline/Baseline";
 import $api from "../../../api";
+import {getContent} from "../../../api/apiConfig";
 
 const Innovate = () => {
 
@@ -41,6 +42,19 @@ const Innovate = () => {
     }, [href])
 
 
+    // content
+    const [content, setContent] = useState([])
+    const str = 'innovate_report_title' +
+        'innovate_report_desc'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='innovate'>
             <BreadCrumb href={href} />
@@ -56,8 +70,8 @@ const Innovate = () => {
             <Baseline />
             <Report
                 sub='NEW BLOG'
-                title='AI Image Generation Reshapes the Creative Industry'
-                desc='AI Image Generation is going viral. Tools use multiple types of artificial intelligence to generate high-quality, photorealistic images from text prompts.'
+                title={ content?.innovate_report_title?.text || '...' }
+                desc={ content?.innovate_report_desc?.text || '...' }
                 img={reportImg}
             />
             <ContactForm />

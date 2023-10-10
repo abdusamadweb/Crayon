@@ -11,6 +11,7 @@ import Baseline from "./baseline/Baseline";
 import Report from "../component-report/Report";
 import ContactForm from "../../../components/contact-form/ContactForm";
 import $api from "../../../api";
+import {getContent} from "../../../api/apiConfig";
 
 const Assets = () => {
 
@@ -46,6 +47,29 @@ const Assets = () => {
     const dataa = JSON.parse(storedData)
 
 
+    // content
+    const [content, setContent] = useState([])
+    const str = 'assess_baseline_title1' +
+        'assess_baseline_title2' +
+        'assess_baseline_title3' +
+        'assess_baseline_title4' +
+        'assess_baseline_sub' +
+        'assess_baseline_desc1' +
+        'assess_baseline_desc2' +
+        'assess_baseline_desc3' +
+        'assess_baseline_items1' +
+        'assess_baseline_items2' +
+        'assess_report_title' +
+        'assess_report_desc'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='assets'>
             <BreadCrumb href={href} />
@@ -58,11 +82,11 @@ const Assets = () => {
                 title={result?.title2 || 'Bubles'}
                 data={data}
             />
-            <Baseline img={result?.image?.full_url} />
+            <Baseline img={result?.image?.full_url} content={content} />
             <Report
                 sub={`${ dataa?.['app-name'] } REPORTS`}
-                title='Subscribe: The State of IT Cost Optimization in 2023'
-                desc='New global research into how businesses manage their budgets, where they struggle and how they are cutting costs.'
+                title={ content?.assess_report_title?.text || '...' }
+                desc={ content?.assess_report_desc?.text || '...' }
                 img={img}
             />
             <ContactForm />

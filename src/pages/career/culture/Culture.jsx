@@ -4,26 +4,19 @@ import img from '../../../assets/images/career-culture-img.webp'
 import img2 from '../../../assets/images/career-culture-img2.png'
 import {Link} from "react-router-dom";
 
-const Culture = () => {
-
-
-    // page title
-    const storedData = localStorage.getItem('globalData')
-    const data = JSON.parse(storedData)
+const Culture = ({ content }) => {
 
 
     return (
         <div className='culture'>
             <div className="container">
-                <h3 className="culture__title">Culture</h3>
+                <h3 className="culture__title">{ content?.career_culture_title?.text || '...' }</h3>
                 <div className="culture__inner">
                     <div className="mission row no-wrap between align-center">
                         <div className='pr3'>
                             <div>
                                 <strong className='mission__title mb3'>Mission</strong>
-                                <p className="mission__desc">
-                                    We help our customers build the commercial and technical foundation for a successful digital transformation journey into the cloud. Through a reliable services framework, we help our customers to rightsize and optimize their IT estates unlock technology potential and innovation while saving costs.
-                                </p>
+                                <p className="mission__desc">{ content?.career_culture_desc1?.text || '...' }</p>
                             </div>
                             <div>
                                 <strong className='mission__title mb2'>Values</strong>
@@ -48,10 +41,7 @@ const Culture = () => {
                             </div>
                         </div>
                         <div className="mission__imgs">
-                            <p className="desc">
-                                Do you know how it feels to look forward to your work day? We do! That's why 91% of { data?.['app-name'] } employees agreed we were a
-                                <a className='link' href="https://www.greatplacetowork.com/certified-company/7046741">Great Place to Work</a>.
-                            </p>
+                            <p className="desc">{ content?.career_culture_desc2?.text || '...' }</p>
                             <img className='img' src={img} alt="webp"/>
                         </div>
                     </div>
@@ -59,10 +49,8 @@ const Culture = () => {
                 <div className="culture__wrapper row no-wrap between align-center">
                     <img className='img' src={img2} alt="img"/>
                     <div className="titles">
-                        <span className='title'>Diversity, Equity, and Inclusion</span>
-                        <p className='desc'>
-                            At { data?.['app-name'] }, we believe people are what makes us great. They are at the core of everything we do. We strive to foster an environment with diverse backgrounds and experiences and a culture where ALL perspectives are welcomed and heard, people are respected and valued, and innovation is encouraged.
-                        </p>
+                        <span className='title'>{ content?.career_diversity_title?.text || '...' }</span>
+                        <p className='desc'>{ content?.career_diversity_desc?.text || '...' }</p>
                         <Link className="btn" to='/about-us/diversity-equity-inclusion'>Diversity, Equity, and Inclusion</Link>
                     </div>
                 </div>

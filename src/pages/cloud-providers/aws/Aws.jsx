@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import BreadCrumb from "../../../components/bread-crumb/BreadCrumb"
 import Titles from "../../../components/cloud-titles/Titles"
 import {useHref} from "react-router-dom"
@@ -10,15 +10,29 @@ import item2 from '../../../assets/images/aws-item2.png'
 import item3 from '../../../assets/images/aws-item3.png'
 import item4 from '../../../assets/images/aws-item4.png'
 import Baseline from "./Baseline"
+import {getContent} from "../../../api/apiConfig";
 
 const Aws = () => {
 
     const href = useHref()
 
 
-    // page title
-    const storedData = localStorage.getItem('globalData')
-    const data = JSON.parse(storedData)
+    // content
+    const [content, setContent] = useState([])
+    const str = 'aws_title' +
+        'aws_desc1' +
+        'aws_desc2' +
+        'aws_baseline_title1' +
+        'aws_baseline_title2' +
+        'aws_baseline_desc1' +
+        'aws_baseline_desc2'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
 
 
     return (
@@ -26,12 +40,12 @@ const Aws = () => {
             <BreadCrumb href={href} />
             <Titles
                 sub='AWS'
-                title="AWS's International Advanced Consulting Partner"
-                desc1={`${ data?.['app-name'] } offers top-notch Migration Services for AWS and boasts more than 150 AWS certifications. However, migration is only one aspect of our tale.`}
-                desc2='We assist you in evaluating your infrastructure, software, and applications, choosing workloads and phasing, architecting a comprehensive solution, and defining and securing your estate on AWS thanks to our strong expertise in software assessment and TCO.'
+                title={ content?.aws_title?.text || '...' }
+                desc1={ content?.aws_desc1?.text || '...' }
+                desc2={ content?.aws_desc2?.text || '...' }
             />
             <img className='microsoft__img container small' src={awsImg} alt="img"/>
-            <Baseline />
+            <Baseline content={content} />
             <CrayonPlatforms />
             <ContactForm />
             <ul className='microsoft__list row center container small'>

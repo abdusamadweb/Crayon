@@ -2,6 +2,7 @@ import './News.scss'
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import $api from "../../../api";
+import {getContent} from "../../../api/apiConfig";
 
 const News = () => {
 
@@ -10,18 +11,26 @@ const News = () => {
     useEffect(() => {
         $api
             .get('/blogs')
-            .then(res => {
-                setBlogs(res.data)
-            })
+            .then(res => setBlogs(res.data))
     }, [])
 
     const [news, setNews] = useState([])
     useEffect(() => {
         $api
             .get('/news')
-            .then(res => {
-                setNews(res.data)
-            })
+            .then(res => setNews(res.data))
+    }, [])
+
+
+    // content
+    const [content, setContent] = useState([])
+    const str = 'home_news_title'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
     }, [])
 
 
@@ -31,9 +40,7 @@ const News = () => {
                 <div className="news__inner">
                     <div className="news__titles">
                         <span className='txt'>NEWS</span>
-                        <h1 className="title">
-                            Find out about our latest news and articles
-                        </h1>
+                        <h1 className="title">{ content?.home_news_title?.text || 'News' }</h1>
                         <Link className='btn' to='/resources/blogs'>View all articles</Link>
                     </div>
                     <ul className="news__teams">

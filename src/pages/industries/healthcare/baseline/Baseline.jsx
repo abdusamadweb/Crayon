@@ -1,12 +1,10 @@
 import './Baseline.scss'
 import React from 'react'
 
-const Baseline = () => {
+const Baseline = ({ content }) => {
 
 
-    // page title
-    const storedData = localStorage.getItem('globalData')
-    const data = JSON.parse(storedData)
+    const list = content?.healthcare_baseline_desc2?.text?.split("\n")?.filter(line => line.trim() !== "")
 
 
     return (
@@ -14,39 +12,19 @@ const Baseline = () => {
             <div className="container small">
                 <div className="baseline__inner">
                     <div className="width">
-                        <h3 className="title">
-                            Let's get your Data ready to go!
-                        </h3>
-                        <h4 className="title2">
-                            What is a { data?.['app-name'] } Envision Session?
-                        </h4>
-                        <p className="desc">
-                            The { data?.['app-name'] } Data Envision Session is a workshop aiming to understand your business and data use cases. The client will collaborate with { data?.['app-name'] } data architects to identify business use cases and develop a roadmap that helps a business create a vision for its data, identify the biggest ROIs on data improvements, outline inefficiencies, and offer prescriptive approaches on how to realize the financial and business gains.
-                        </p>
+                        <h3 className="title">{ content?.healthcare_baseline_title1?.text || '...' }</h3>
+                        <h4 className="title2">{ content?.healthcare_baseline_sub1?.text || '...' }</h4>
+                        <p className="desc">{ content?.healthcare_baseline_desc1?.text || '...' }</p>
                     </div>
                     <div>
-                        <h3 className="title">
-                            Ready for a custom solution?
-                        </h3>
-                        <h4 className="title2">
-                            Sample Envision Session Process
-                        </h4>
+                        <h3 className="title">{ content?.healthcare_baseline_title2?.text || '...' }</h3>
+                        <h4 className="title2">{ content?.healthcare_baseline_sub2?.text || '...' }</h4>
                         <ol className='list numeric'>
-                            <li className="desc">
-                                Discovery/whiteboard sessions with business and IT stakeholders to gain insight into the current data estate
-                            </li>
-                            <li className="desc">
-                                { data?.['app-name'] } to provide a high-level solution design of possible future state addressing remediation of identified pain points and data/analytics platforms that support business strategy and identified needs
-                            </li>
-                            <li className="desc">
-                                Identify initial pilots and PoC
-                            </li>
-                            <li className="desc">
-                                Identify Migration and Transformation strategies
-                            </li>
-                            <li className="desc">
-                                { data?.['app-name'] } will provide a high-level roadmap and best practices to prepare for a scalable architecture
-                            </li>
+                            {
+                                list?.map(i => (
+                                    <li className="desc" key={i}>{ i }</li>
+                                ))
+                            }
                         </ol>
                     </div>
                 </div>

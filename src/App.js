@@ -139,8 +139,8 @@ const App = () => {
 
             <Route path='/services/assess-migrate' element={<Assets />} />
             <Route path='/services/govern-optimize' element={<Govern />} />
-            <Route path='/services/innovate-accelerate' element={<Innovate />} />
             <Route path='/services/operate-support' element={<Operate />} />
+            <Route path='/services/innovate-accelerate' element={<Innovate />} />
 
             <Route path='/industries/healthcare' element={<Healthcare />} />
             <Route path='/industries/public-sector' element={<Public />} />

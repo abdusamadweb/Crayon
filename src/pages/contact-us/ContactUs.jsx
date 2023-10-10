@@ -1,9 +1,11 @@
 import './ContactUs.scss'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHref} from "react-router-dom";
 import BreadCrumb from "../../components/bread-crumb/BreadCrumb";
 import Offices from "../../components/offices/Offices";
 import {formatPhone} from "../../assets/scripts/global";
+import $api from "../../api";
+import {getContent} from "../../api/apiConfig";
 
 const ContactUs = () => {
 
@@ -15,6 +17,18 @@ const ContactUs = () => {
     const data = JSON.parse(storedData)
 
 
+    // content
+    const [content, setContent] = useState([])
+    const str = 'contact_desc1 contact_desc2 contact_getin'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='contact-us'>
             <BreadCrumb href={href} />
@@ -22,15 +36,11 @@ const ContactUs = () => {
                 <div className="contact-us__titles">
                     <h2 className="title">Contact us</h2>
                     <div className="descs row no-wrap between g3 mb3">
-                        <p className="desc">
-                            When our customers need help – they can expect to access competent teammates in their own language
-                        </p>
-                        <p className="desc desc-small">
-                            Our support desk operate in the same local market, speak the same language and have an implicit understanding of your business.
-                        </p>
+                        <p className="desc">{ content?.contact_desc1?.text || '...' }</p>
+                        <p className="desc desc-small">{ content?.contact_desc2?.text || '...' }</p>
                     </div>
                     <div className='contacts'>
-                        <h4 className="contacts__title">Get in touch with our team.</h4>
+                        <h4 className="contacts__title">{ content?.contact_getin?.text || '...' }</h4>
                         <div className='row pt2 pb2 border'>
                             <span className='contacts__txt'>Email Us</span>
                             <a className='link' href={`mailto: ${data?.email}`}>{ data?.email || '...' }</a>

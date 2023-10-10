@@ -11,6 +11,7 @@ import Report from "../component-report/Report";
 import reportImg from "../../../assets/images/services/govern-report.jpg";
 import ContactForm from "../../../components/contact-form/ContactForm";
 import $api from "../../../api";
+import {getContent} from "../../../api/apiConfig";
 
 const Govern = () => {
 
@@ -46,6 +47,23 @@ const Govern = () => {
     const dataa = JSON.parse(storedData)
 
 
+    // content
+    const [content, setContent] = useState([])
+    const str = 'govern__baseline_title' +
+        'govern_baseline_title2' +
+        'govern_baseline_desc' +
+        'govern_baseline_items' +
+        'govern_report_title' +
+        'govern_report_desc'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='govern'>
             <BreadCrumb href={href} />
@@ -58,11 +76,11 @@ const Govern = () => {
                 title={result?.title2 || 'Bubles'}
                 data={data}
             />
-            <Baseline />
+            <Baseline content={content} />
             <Report
                 sub={`${ dataa?.['app-name'] } REPORTS`}
-                title='A Practical Guide to IT Cost Optimization'
-                desc='IT cost optimization is the process of continually evaluating and configuring all the cloud resources that drive the applications, infrastructures, and workloads of your business.'
+                title={ content?.govern_report_title?.text || '...' }
+                desc={ content?.govern_report_desc?.text || '...' }
                 img={reportImg}
             />
             <ContactForm />

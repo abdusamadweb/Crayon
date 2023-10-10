@@ -2,7 +2,7 @@ import './Grow.scss'
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const Grow = () => {
+const Grow = ({ content }) => {
 
 
     // page title
@@ -14,11 +14,11 @@ const Grow = () => {
         <div className='grow'>
             <div className="container small">
                 <div className="grow__inner">
-                    <h3 className="title">{ data?.['app-name'] } Partner Benefits</h3>
+                    <h3 className="title">{ content?.partner_benefit_title?.text || '...' }</h3>
                     <div className='grid'>
                         <div>
                             <div className='margin'>
-                                <span className="sub">GROW YOUR SOFTWARE AND CLOUD BUSINESS</span>
+                                <span className="sub">{ content?.partner_benefit_sub?.text || '...' }</span>
                                 <p className='desc'>
                                     Now you can leverage { data?.['app-name'] } expertise to have licensing <strong>optimization conversations with your customers.</strong>
                                 </p>
@@ -57,7 +57,7 @@ const Grow = () => {
                     </div>
                 </div>
                 <div className="grow__wrapper">
-                    <h3 className="title">Your business is our business</h3>
+                    <h3 className="title">{ content?.partner_business_title?.text || '...' }</h3>
                     <div className='grid'>
                         <div>
                             <div className='margin'>

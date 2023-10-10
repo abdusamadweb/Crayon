@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHref} from "react-router-dom";
 import img1 from "../../../assets/images/services/monitor.png";
 import img2 from "../../../assets/images/services/manage.png";
@@ -8,6 +8,7 @@ import Titles from "../../../components/service-titles/Titles";
 import Bubles from "../../../components/bubles/Bubles";
 import ContactForm from "../../../components/contact-form/ContactForm";
 import Baseline from "./baseline/Baseline";
+import {getContent} from "../../../api/apiConfig";
 
 const Public = () => {
 
@@ -30,20 +31,40 @@ const Public = () => {
     ]
 
 
+    // content
+    const [content, setContent] = useState([])
+    const str = 'sector_title' +
+        'sector_desc' +
+        'sector_bubles_title' +
+        'sector_baseline_title1' +
+        'sector_baseline_title2' +
+        'sector_baseline_desc1' +
+        'sector_baseline_desc2' +
+        'sector_baseline_items1' +
+        'sector_baseline_items2'
+    useEffect(() => {
+        const get = async () => {
+            const res = await getContent(str)
+            setContent(res)
+        }
+        get()
+    }, [])
+
+
     return (
         <div className='public'>
             <BreadCrumb href={href} />
             <Titles
                 sub='SOLUTIONS BY INDUSTRY'
-                title='Public Sector'
-                desc={`${ data?.['app-name'] } is the ideal choice to service the public sector due to its expertise in cloud migration, on-premises VS. cloud evaluations, and cybersecurity.`}
+                title={ content?.sector_title?.text || '...' }
+                desc={ content?.sector_desc?.text || '...' }
             />
             <Bubles
-                sub='PUBLIC SECTOR'
-                title='Does your cyber insurance demand more?'
+                sub={ content?.sector_title?.text || '...' }
+                title={ content?.sector_bubles_title?.text || '...' }
                 data={data}
             />
-            <Baseline />
+            <Baseline content={content} />
             <ContactForm />
         </div>
     )
